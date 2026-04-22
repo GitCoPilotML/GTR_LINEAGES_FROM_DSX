@@ -1,0 +1,166 @@
+==============================================================================
+ DATA LINEAGE REPORT
+ Field of interest          : CLEARED
+ Input  file                : C:\NBC\GTR\GTR_LINEAGE_TRACE\CLEARED_LINEAGE_TRACE.txt
+ Output file                : C:\NBC\GTR\GTR_LINEAGE_REPORTS\CLEARED_LINEAGE_REPORT.txt
+ Filter unused source cols  : True
+==============================================================================
+
+------------------------------------------------------------------------------
+ 0. JOB PIPELINE(S)  (stage-by-stage flow of the data)
+------------------------------------------------------------------------------
+   (no StageNames lists found in this file)
+
+------------------------------------------------------------------------------
+ 1. PHYSICAL SOURCE TABLES (from embedded SQL / XML)
+    (showing only columns that are referenced downstream)
+------------------------------------------------------------------------------
+
+  SCHEMA : #DwhTresDbStaging.DbSchema#
+  TABLE  : TB_MTRSTG_MRX_REVCON_LST_OPT
+  COLUMNS PROJECTED (216 total, 8 used, 208 hidden):
+      - MTR_CENTRAL_CPTY
+      - MTR_CLEARING_TMSTMP
+      - MTR_CLEARED
+      - MTR_CLEARING_OBLIGATION
+      - MTR_CONFIRMED
+      - MTR_CONFIRMATION_TMSTMP
+      - MTR_COLL_PORTFOLIO_CODE
+      - MTR_COLL_PORTFOLIO_ID
+      ... (208 more columns hidden — not referenced downstream)
+
+  SCHEMA : #DwhTresDbFmOds.DbSchema#
+  TABLE  : TB_TRRFMO_TRD_REVCON_LST_OPT
+  COLUMNS PROJECTED (222 total, 0 used, 222 hidden):
+      ... (222 more columns hidden — not referenced downstream)
+
+  SCHEMA : #DwhTresDbTMF_SERVICES.DbSchema#
+  TABLE  : VW_SWAP_DEALER_PART20_RPT
+  COLUMNS PROJECTED (31 total, 3 used, 28 hidden):
+      - PRODUCTTYPE
+      - CLEARED
+      - CATEGORY
+      ... (28 more columns hidden — not referenced downstream)
+
+  SCHEMA : #DwhTresDbTMF_SERVICES.DbSchema#
+  TABLE  : VW_SWAP_DEALER_PART20_RPT_REPRISE
+  COLUMNS PROJECTED (31 total, 3 used, 28 hidden):
+      - PRODUCTTYPE
+      - CLEARED
+      - CATEGORY
+      ... (28 more columns hidden — not referenced downstream)
+
+  SCHEMA : (unknown)
+  TABLE  : AND
+
+------------------------------------------------------------------------------
+ 2. FIELD-BY-FIELD MAPPINGS  (SOURCE  -->  DESTINATION)
+------------------------------------------------------------------------------
+
+  >>> DESTINATION LINK / STAGE : From_Trf_tech
+      SOURCE                                         -->   DESTINATION
+      ---------------------------------------------        ----------------------------------------
+      lnk_InFromDB.CLEARED                           -->   From_Trf_tech.cleared   (line 126)
+      lnk_InFromDB.CATEGORY                          -->   From_Trf_tech.category   (line 127)
+      lnk_InFromDB.PRODUCTTYPE                       -->   From_Trf_tech.productType   (line 128)
+
+  >>> DESTINATION LINK / STAGE : lnk_OutToDB
+      SOURCE                                         -->   DESTINATION
+      ---------------------------------------------        ----------------------------------------
+      lnk_OutToTempFile.CONFIRMED                    -->   lnk_OutToDB.MTR_CONFIRMED   (line 131)
+      lnk_OutToTempFile.CLEARING_OBLIGATION          -->   lnk_OutToDB.MTR_CLEARING_OBLIGATION   (line 132)
+      lnk_OutToTempFile.CLEARED                      -->   lnk_OutToDB.MTR_CLEARED   (line 133)
+      lnk_OutToTempFile.CLEARING_TMSTMP              -->   lnk_OutToDB.MTR_CLEARING_TMSTMP   (line 134)
+      lnk_OutToTempFile.CENTRAL_CPTY                 -->   lnk_OutToDB.MTR_CENTRAL_CPTY   (line 135)
+
+  >>> DESTINATION LINK / STAGE : lnk_SDH
+      SOURCE                                         -->   DESTINATION
+      ---------------------------------------------        ----------------------------------------
+      lnk_InFromDB.MTR_CONFIRMED                     -->   lnk_SDH.CONFIRMED   (line 138)
+      lnk_InFromDB.MTR_CLEARING_OBLIGATION           -->   lnk_SDH.CLEARING_OBLIGATION   (line 139)
+      lnk_InFromDB.MTR_CLEARED                       -->   lnk_SDH.CLEARED   (line 140)
+      lnk_InFromDB.MTR_CLEARING_TMSTMP               -->   lnk_SDH.CLEARING_TMSTMP   (line 141)
+      lnk_InFromDB.MTR_CENTRAL_CPTY                  -->   lnk_SDH.CENTRAL_CPTY   (line 142)
+
+  >>> DESTINATION LINK / STAGE : lnk_ToRmDp
+      SOURCE                                         -->   DESTINATION
+      ---------------------------------------------        ----------------------------------------
+      lnk_InFromDB.MTR_COLL_PORTFOLIO_ID             -->   lnk_ToRmDp.TRR_COLL_PORTFOLIO_ID  [string[max=255]]   (line 168)
+      lnk_InFromDB.MTR_COLL_PORTFOLIO_CODE           -->   lnk_ToRmDp.TRR_COLL_PORTFOLIO_CODE  [string[max=255]]   (line 169)
+      lnk_InFromDB.MTR_CONFIRMATION_TMSTMP           -->   lnk_ToRmDp.TRR_CONFIRMATION_TMSTMP  [string[max=255]]   (line 170)
+      lnk_InFromDB.MTR_CONFIRMED                     -->   lnk_ToRmDp.TRR_CONFIRMED  [string[max=255]]   (line 171)
+      lnk_InFromDB.MTR_CLEARING_OBLIGATION           -->   lnk_ToRmDp.TRR_CLEARING_OBLIGATION  [string[max=255]]   (line 172)
+      lnk_InFromDB.MTR_CLEARED                       -->   lnk_ToRmDp.TRR_CLEARED  [string[max=255]]   (line 173)
+      lnk_InFromDB.MTR_CLEARING_TMSTMP               -->   lnk_ToRmDp.TRR_CLEARING_TMSTMP  [string[max=255]]   (line 174)
+      lnk_InFromDB.MTR_CENTRAL_CPTY                  -->   lnk_ToRmDp.TRR_CENTRAL_CPTY  [string[max=255]]   (line 175)
+
+------------------------------------------------------------------------------
+ 3. COLUMN DEFINITIONS WITH DERIVATIONS
+------------------------------------------------------------------------------
+   (none found)
+
+------------------------------------------------------------------------------
+ 3b. GENERATED TRANSFORM OPERATORS  (custom stage code)
+------------------------------------------------------------------------------
+   (none found)
+
+------------------------------------------------------------------------------
+ 4. END-TO-END LINEAGE CHAINS
+    (Read left-to-right: PHYSICAL SOURCE --> staging link --> target link)
+------------------------------------------------------------------------------
+
+   [PHYSICAL] #DwhTresDbTMF_SERVICES.DbSchema#.VW_SWAP_DEALER_PART20_RPT.CLEARED  -->  lnk_InFromDB.CLEARED  -->  From_Trf_tech.cleared
+
+   [PHYSICAL] #DwhTresDbTMF_SERVICES.DbSchema#.VW_SWAP_DEALER_PART20_RPT.CATEGORY  -->  lnk_InFromDB.CATEGORY  -->  From_Trf_tech.category
+
+   [PHYSICAL] #DwhTresDbTMF_SERVICES.DbSchema#.VW_SWAP_DEALER_PART20_RPT.PRODUCTTYPE  -->  lnk_InFromDB.PRODUCTTYPE  -->  From_Trf_tech.productType
+
+   lnk_OutToTempFile.CONFIRMED  -->  lnk_OutToDB.MTR_CONFIRMED
+
+   lnk_OutToTempFile.CLEARING_OBLIGATION  -->  lnk_OutToDB.MTR_CLEARING_OBLIGATION
+
+   [PHYSICAL] #DwhTresDbTMF_SERVICES.DbSchema#.VW_SWAP_DEALER_PART20_RPT.CLEARED  -->  lnk_OutToTempFile.CLEARED  -->  lnk_OutToDB.MTR_CLEARED
+
+   lnk_OutToTempFile.CLEARING_TMSTMP  -->  lnk_OutToDB.MTR_CLEARING_TMSTMP
+
+   lnk_OutToTempFile.CENTRAL_CPTY  -->  lnk_OutToDB.MTR_CENTRAL_CPTY
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_MTRSTG_MRX_REVCON_LST_OPT.MTR_CONFIRMED  -->  lnk_InFromDB.MTR_CONFIRMED  -->  lnk_SDH.CONFIRMED
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_MTRSTG_MRX_REVCON_LST_OPT.MTR_CLEARING_OBLIGATION  -->  lnk_InFromDB.MTR_CLEARING_OBLIGATION  -->  lnk_SDH.CLEARING_OBLIGATION
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_MTRSTG_MRX_REVCON_LST_OPT.MTR_CLEARED  -->  lnk_InFromDB.MTR_CLEARED  -->  lnk_SDH.CLEARED
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_MTRSTG_MRX_REVCON_LST_OPT.MTR_CLEARING_TMSTMP  -->  lnk_InFromDB.MTR_CLEARING_TMSTMP  -->  lnk_SDH.CLEARING_TMSTMP
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_MTRSTG_MRX_REVCON_LST_OPT.MTR_CENTRAL_CPTY  -->  lnk_InFromDB.MTR_CENTRAL_CPTY  -->  lnk_SDH.CENTRAL_CPTY
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_MTRSTG_MRX_REVCON_LST_OPT.MTR_COLL_PORTFOLIO_ID  -->  lnk_InFromDB.MTR_COLL_PORTFOLIO_ID  -->  lnk_ToRmDp.TRR_COLL_PORTFOLIO_ID
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_MTRSTG_MRX_REVCON_LST_OPT.MTR_COLL_PORTFOLIO_CODE  -->  lnk_InFromDB.MTR_COLL_PORTFOLIO_CODE  -->  lnk_ToRmDp.TRR_COLL_PORTFOLIO_CODE
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_MTRSTG_MRX_REVCON_LST_OPT.MTR_CONFIRMATION_TMSTMP  -->  lnk_InFromDB.MTR_CONFIRMATION_TMSTMP  -->  lnk_ToRmDp.TRR_CONFIRMATION_TMSTMP
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_MTRSTG_MRX_REVCON_LST_OPT.MTR_CONFIRMED  -->  lnk_InFromDB.MTR_CONFIRMED  -->  lnk_ToRmDp.TRR_CONFIRMED
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_MTRSTG_MRX_REVCON_LST_OPT.MTR_CLEARING_OBLIGATION  -->  lnk_InFromDB.MTR_CLEARING_OBLIGATION  -->  lnk_ToRmDp.TRR_CLEARING_OBLIGATION
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_MTRSTG_MRX_REVCON_LST_OPT.MTR_CLEARED  -->  lnk_InFromDB.MTR_CLEARED  -->  lnk_ToRmDp.TRR_CLEARED
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_MTRSTG_MRX_REVCON_LST_OPT.MTR_CLEARING_TMSTMP  -->  lnk_InFromDB.MTR_CLEARING_TMSTMP  -->  lnk_ToRmDp.TRR_CLEARING_TMSTMP
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_MTRSTG_MRX_REVCON_LST_OPT.MTR_CENTRAL_CPTY  -->  lnk_InFromDB.MTR_CENTRAL_CPTY  -->  lnk_ToRmDp.TRR_CENTRAL_CPTY
+
+------------------------------------------------------------------------------
+ 5. ITEMS MENTIONING "CLEARED"
+------------------------------------------------------------------------------
+
+   Field-level chains:
+      [PHYSICAL] #DwhTresDbTMF_SERVICES.DbSchema#.VW_SWAP_DEALER_PART20_RPT.CLEARED  -->  lnk_InFromDB.CLEARED  -->  From_Trf_tech.cleared
+      [PHYSICAL] #DwhTresDbTMF_SERVICES.DbSchema#.VW_SWAP_DEALER_PART20_RPT.CLEARED  -->  lnk_OutToTempFile.CLEARED  -->  lnk_OutToDB.MTR_CLEARED
+      [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_MTRSTG_MRX_REVCON_LST_OPT.MTR_CLEARED  -->  lnk_InFromDB.MTR_CLEARED  -->  lnk_SDH.CLEARED
+      [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_MTRSTG_MRX_REVCON_LST_OPT.MTR_CLEARED  -->  lnk_InFromDB.MTR_CLEARED  -->  lnk_ToRmDp.TRR_CLEARED
+
+==============================================================================
+ END OF REPORT
+==============================================================================
