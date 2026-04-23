@@ -1,0 +1,120 @@
+==============================================================================
+ DATA LINEAGE REPORT
+ Field of interest          : PAYER_IDENTIFIER_2
+ Input  file                : C:\NBC\GTR\GTR_LINEAGE_TRACE\PAYER_IDENTIFIER_2_LINEAGE_TRACE.txt
+ Output file                : C:\NBC\GTR\GTR_LINEAGE_REPORTS\PAYER_IDENTIFIER_2_LINEAGE_REPORT.txt
+ Filter unused source cols  : True
+==============================================================================
+
+------------------------------------------------------------------------------
+ 1. PHYSICAL SOURCE TABLES (from embedded SQL / XML)
+    (showing only columns that are referenced downstream)
+------------------------------------------------------------------------------
+   (none found)
+
+------------------------------------------------------------------------------
+ 2. FIELD-BY-FIELD MAPPINGS  (SOURCE  -->  DESTINATION)
+------------------------------------------------------------------------------
+
+  >>> DESTINATION LINK / STAGE : Ln_SDH
+      SOURCE                                         -->   DESTINATION
+      ---------------------------------------------        ----------------------------------------
+      Ln_StgData.QRF_UNDRL_ASSET_NAME                -->   Ln_SDH.UNDERLYING_ASSET_NAME   (line 16)
+      Ln_StgData.QRF_PAYER_ID1                       -->   Ln_SDH.PAYER_IDENTIFIER_1  [string[max=50]]   (line 17)
+      Ln_StgData.QRF_PAYER_ID2                       -->   Ln_SDH.PAYER_IDENTIFIER_2  [string[max=50]]   (line 18)
+      Ln_StgData.QRF_STRIKE_CCY                      -->   Ln_SDH.STRIKE_PRICE_CURRENCY   (line 19)
+      Ln_StgData.QRF_LEG_1_CMDTY_INSTR_ID            -->   Ln_SDH.LEG_1_CMDTY_INSTR_ID   (line 20)
+      Ln_StgData.QRF_SELLER_ID                       -->   Ln_SDH.SELLER_IDENTIFIER  [string[max=50]]   (line 51)
+      Ln_StgData.QRF_UNDRL_ASSET_ID_TYPE             -->   Ln_SDH.UNDERLYING_ASSET_ID_TYPE   (line 52)
+      Ln_StgData.QRF_UNDRL_ASSET_ID                  -->   Ln_SDH.UNDERLYING_ASSET_ID   (line 53)
+      Ln_StgData.QRF_UNDRL_ASSET_NAME                -->   Ln_SDH.UNDERLYING_ASSET_NAME   (line 54)
+      Ln_StgData.QRF_PAYER_ID1                       -->   Ln_SDH.PAYER_IDENTIFIER_1  [string[max=50]]   (line 55)
+      Ln_StgData.QRF_PAYER_ID2                       -->   Ln_SDH.PAYER_IDENTIFIER_2  [string[max=50]]   (line 56)
+      Ln_StgData.QRF_STRIKE_CCY                      -->   Ln_SDH.STRIKE_PRICE_CURRENCY   (line 57)
+      Ln_StgData.QRF_LEG_1_CMDTY_INSTR_ID            -->   Ln_SDH.LEG_1_CMDTY_INSTR_ID   (line 58)
+      Ln_StgData.QRF_LEG_1_QTY_FREQ                  -->   Ln_SDH.LEG_1_QTY_FREQ   (line 59)
+      Ln_StgData.QRF_LEG_1_TOTAL_NOTNL_QTY           -->   Ln_SDH.LEG_1_TOTAL_NOTNL_QTY   (line 60)
+
+  >>> DESTINATION LINK / STAGE : Ln_To_SDH1
+      SOURCE                                         -->   DESTINATION
+      ---------------------------------------------        ----------------------------------------
+      Ln_Input.QRD_SELLER_ID                         -->   Ln_To_SDH1.SELLER_IDENTIFIER  [string[max=50]]   (line 23)
+      Ln_Input.QRD_PAYER_ID1                         -->   Ln_To_SDH1.PAYER_IDENTIFIER_1  [string[max=50]]   (line 24)
+      Ln_Input.QRD_PAYER_ID2                         -->   Ln_To_SDH1.PAYER_IDENTIFIER_2  [string[max=50]]   (line 25)
+      Ln_Input.QRD_SUBMIT_PARTY_ID                   -->   Ln_To_SDH1.SUBMITTING_PARTY_ID  [string[max=50]]   (line 26)
+      Ln_Input.QRD_SUBMIT_PARTY_ID_TYPE              -->   Ln_To_SDH1.SUBMITTING_PARTY_ID_TYPE  [string[max=50]]   (line 27)
+      Ln_Input.QRD_TRD_PARTY_CFTC_FIN_ENT_ST1        -->   Ln_To_SDH1.TRD_PARTY_1_CFTC_FIN_ENTY_STAT  [string[max=50]]   (line 31)
+      Ln_Input.QRD_TRD_PARTY_CFTC_FIN_ENT_ST2        -->   Ln_To_SDH1.TRD_PARTY_2_CFTC_FIN_ENTY_STAT  [string[max=50]]   (line 32)
+      Ln_Input.QRD_BUYER_ID                          -->   Ln_To_SDH1.BUYER_IDENTIFIER  [string[max=50]]   (line 33)
+      Ln_Input.QRD_SELLER_ID                         -->   Ln_To_SDH1.SELLER_IDENTIFIER  [string[max=50]]   (line 34)
+      Ln_Input.QRD_PAYER_ID1                         -->   Ln_To_SDH1.PAYER_IDENTIFIER_1  [string[max=50]]   (line 35)
+      Ln_Input.QRD_PAYER_ID2                         -->   Ln_To_SDH1.PAYER_IDENTIFIER_2  [string[max=50]]   (line 36)
+      Ln_Input.QRD_SUBMIT_PARTY_ID                   -->   Ln_To_SDH1.SUBMITTING_PARTY_ID  [string[max=50]]   (line 37)
+      Ln_Input.QRD_SUBMIT_PARTY_ID_TYPE              -->   Ln_To_SDH1.SUBMITTING_PARTY_ID_TYPE  [string[max=50]]   (line 38)
+      Ln_Input.QRD_LATE_EXEC_DATE                    -->   Ln_To_SDH1.LATEST_EXEC_DATETIME  [string[max=100]]   (line 39)
+      Ln_Input.QRD_NOTIONAL_AMT1                     -->   Ln_To_SDH1.NOTIONAL_AMOUNT_1   (line 40)
+      Ln_Input.QRD_NOTIONAL_AMT2                     -->   Ln_To_SDH1.NOTIONAL_AMOUNT_2   (line 41)
+
+------------------------------------------------------------------------------
+ 3. COLUMN DEFINITIONS WITH DERIVATIONS
+------------------------------------------------------------------------------
+   (none found)
+
+------------------------------------------------------------------------------
+ 4. END-TO-END LINEAGE CHAINS
+    (Read left-to-right: PHYSICAL SOURCE --> staging link --> target link)
+------------------------------------------------------------------------------
+
+   Ln_StgData.QRF_UNDRL_ASSET_NAME  -->  Ln_SDH.UNDERLYING_ASSET_NAME
+
+   Ln_StgData.QRF_PAYER_ID1  -->  Ln_SDH.PAYER_IDENTIFIER_1
+
+   Ln_StgData.QRF_PAYER_ID2  -->  Ln_SDH.PAYER_IDENTIFIER_2
+
+   Ln_StgData.QRF_STRIKE_CCY  -->  Ln_SDH.STRIKE_PRICE_CURRENCY
+
+   Ln_StgData.QRF_LEG_1_CMDTY_INSTR_ID  -->  Ln_SDH.LEG_1_CMDTY_INSTR_ID
+
+   Ln_Input.QRD_SELLER_ID  -->  Ln_To_SDH1.SELLER_IDENTIFIER
+
+   Ln_Input.QRD_PAYER_ID1  -->  Ln_To_SDH1.PAYER_IDENTIFIER_1
+
+   Ln_Input.QRD_PAYER_ID2  -->  Ln_To_SDH1.PAYER_IDENTIFIER_2
+
+   Ln_Input.QRD_SUBMIT_PARTY_ID  -->  Ln_To_SDH1.SUBMITTING_PARTY_ID
+
+   Ln_Input.QRD_SUBMIT_PARTY_ID_TYPE  -->  Ln_To_SDH1.SUBMITTING_PARTY_ID_TYPE
+
+   Ln_Input.QRD_TRD_PARTY_CFTC_FIN_ENT_ST1  -->  Ln_To_SDH1.TRD_PARTY_1_CFTC_FIN_ENTY_STAT
+
+   Ln_Input.QRD_TRD_PARTY_CFTC_FIN_ENT_ST2  -->  Ln_To_SDH1.TRD_PARTY_2_CFTC_FIN_ENTY_STAT
+
+   Ln_Input.QRD_BUYER_ID  -->  Ln_To_SDH1.BUYER_IDENTIFIER
+
+   Ln_Input.QRD_LATE_EXEC_DATE  -->  Ln_To_SDH1.LATEST_EXEC_DATETIME
+
+   Ln_Input.QRD_NOTIONAL_AMT1  -->  Ln_To_SDH1.NOTIONAL_AMOUNT_1
+
+   Ln_Input.QRD_NOTIONAL_AMT2  -->  Ln_To_SDH1.NOTIONAL_AMOUNT_2
+
+   Ln_StgData.QRF_SELLER_ID  -->  Ln_SDH.SELLER_IDENTIFIER
+
+   Ln_StgData.QRF_UNDRL_ASSET_ID_TYPE  -->  Ln_SDH.UNDERLYING_ASSET_ID_TYPE
+
+   Ln_StgData.QRF_UNDRL_ASSET_ID  -->  Ln_SDH.UNDERLYING_ASSET_ID
+
+   Ln_StgData.QRF_LEG_1_QTY_FREQ  -->  Ln_SDH.LEG_1_QTY_FREQ
+
+   Ln_StgData.QRF_LEG_1_TOTAL_NOTNL_QTY  -->  Ln_SDH.LEG_1_TOTAL_NOTNL_QTY
+
+------------------------------------------------------------------------------
+ 5. CHAINS MENTIONING "PAYER_IDENTIFIER_2"
+------------------------------------------------------------------------------
+
+   Ln_StgData.QRF_PAYER_ID2  -->  Ln_SDH.PAYER_IDENTIFIER_2
+
+   Ln_Input.QRD_PAYER_ID2  -->  Ln_To_SDH1.PAYER_IDENTIFIER_2
+
+==============================================================================
+ END OF REPORT
+==============================================================================
