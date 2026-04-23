@@ -1,0 +1,107 @@
+==============================================================================
+ DATA LINEAGE REPORT
+ Field of interest          : CURR1
+ Input  file                : C:\NBC\GTR\GTR_LINEAGE_TRACE\CURR1_LINEAGE_TRACE.txt
+ Output file                : C:\NBC\GTR\GTR_LINEAGE_REPORTS\CURR1_LINEAGE_REPORT.txt
+ Filter unused source cols  : False
+==============================================================================
+
+------------------------------------------------------------------------------
+ 0. JOB PIPELINE(S)  (stage-by-stage flow of the data)
+------------------------------------------------------------------------------
+
+  Pipeline #1  (declared at line 6, 9 stages):
+
+      [OracleConnectorPX]    Ora_TB_THDFMO_TRD_HEADR
+                                (Oracle DB read/write)
+                                    |
+                                    v
+      [PxLookup]             Underlying_Ins
+                                (Lookup (joins reference data))
+                                    |
+                                    v
+      [PxLookup]             Not_Underlying_Ins_CURR1  <-- contains FIELD_NAME
+                                (Lookup (joins reference data))
+                                    |
+                                    v
+      [PxLookup]             Interest_Forward_Rate
+                                (Lookup (joins reference data))
+                                    |
+                                    v
+      [PxFilter]             fl_Rate_Types
+                                (Filter (drops rows by condition))
+                                    |
+                                    v
+      [PxDataSet]            ds_Rates_Ces
+                                (Dataset (intermediate storage))
+                                    |
+                                    v
+      [CTransformerStage]    trf_Calculation
+                                (Transformer (column-level logic))
+                                    |
+                                    v
+      [PxLookup]             Not_Underlying_Ins_CURR2
+                                (Lookup (joins reference data))
+                                    |
+                                    v
+      [OracleConnectorPX]    Ora_TB_MRTFMO_MKT_RATE
+                                (Oracle DB read/write)
+
+------------------------------------------------------------------------------
+ 1. PHYSICAL SOURCE TABLES (from embedded SQL / XML)
+------------------------------------------------------------------------------
+   (none found)
+
+------------------------------------------------------------------------------
+ 2. FIELD-BY-FIELD MAPPINGS  (SOURCE  -->  DESTINATION)
+------------------------------------------------------------------------------
+
+  >>> DESTINATION LINK / STAGE : ln_to_Curr1
+      SOURCE                                         -->   DESTINATION
+      ---------------------------------------------        ----------------------------------------
+      ln_Underl_Rates.MRT_RATE_VAL                   -->   ln_to_Curr1.MRT_RATE_VAL_UNDERL   (line 16)
+
+------------------------------------------------------------------------------
+ 3. COLUMN DEFINITIONS WITH DERIVATIONS
+------------------------------------------------------------------------------
+   (none found)
+
+------------------------------------------------------------------------------
+ 3b. GENERATED TRANSFORM OPERATORS  (custom stage code)
+------------------------------------------------------------------------------
+
+  Operator    : V0S5_FMRiskExtractRatesCES_Not_Underlying_Ins_CURR1
+  (declared at line 8)
+
+  Operator    : V0S5_FMRiskExtractRatesCES_Not_Underlying_Ins_CURR1
+  (declared at line 19)
+
+  Row-reject indicators seen:
+      RowRejected0 = 1    (REJECTED)   (line 15)
+      RowRejected0 = 0    (kept)   (line 17)
+      RowRejected0 = 1    (REJECTED)   (line 20)
+
+------------------------------------------------------------------------------
+ 4. END-TO-END LINEAGE CHAINS
+    (Read left-to-right: PHYSICAL SOURCE --> staging link --> target link)
+------------------------------------------------------------------------------
+
+   ln_Underl_Rates.MRT_RATE_VAL  -->  ln_to_Curr1.MRT_RATE_VAL_UNDERL
+
+------------------------------------------------------------------------------
+ 5. ITEMS MENTIONING "CURR1"
+------------------------------------------------------------------------------
+
+   Stages whose name contains the field:
+      pipeline #1, stage #3: [PxLookup] Not_Underlying_Ins_CURR1
+
+   Generated operators referencing the field:
+      V0S5_FMRiskExtractRatesCES_Not_Underlying_Ins_CURR1   (line 8)
+      V0S5_FMRiskExtractRatesCES_Not_Underlying_Ins_CURR1   (line 19)
+
+   Field-level chains:
+      ln_Underl_Rates.MRT_RATE_VAL  -->  ln_to_Curr1.MRT_RATE_VAL_UNDERL
+
+==============================================================================
+ END OF REPORT
+==============================================================================
