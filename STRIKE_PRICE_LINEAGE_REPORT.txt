@@ -1,0 +1,326 @@
+==============================================================================
+ DATA LINEAGE REPORT
+ Field of interest          : STRIKE_PRICE
+ Input  file                : C:\NBC\GTR\GTR_LINEAGE_TRACE\STRIKE_PRICE_LINEAGE_TRACE.txt
+ Output file                : C:\NBC\GTR\GTR_LINEAGE_REPORTS\STRIKE_PRICE_LINEAGE_REPORT.txt
+ Filter unused source cols  : True
+==============================================================================
+
+------------------------------------------------------------------------------
+ 0. JOB PIPELINE(S)  (stage-by-stage flow of the data)
+------------------------------------------------------------------------------
+   (no StageNames lists found in this file)
+
+------------------------------------------------------------------------------
+ 1. PHYSICAL SOURCE TABLES (from embedded SQL / XML)
+    (showing only columns that are referenced downstream)
+------------------------------------------------------------------------------
+
+  SCHEMA : #DwhTresDbStaging.DbSchema#
+  TABLE  : TB_MTRSTG_MRX_REVCON_LST_OPT
+  COLUMNS PROJECTED (216 total, 7 used, 209 hidden):
+      - MTR_STRIKE_PRICE_CCY
+      - MTR_STRIKE_PRICE
+      - MTR_STRIKE_PRICE_TYPE
+      - MTR_OPTION_STYLE
+      - MTR_OPTION_TYPE
+      - MTR_PRICE_TIME_INTERVL_QTY
+      - MTR_QTY_UNIT
+      ... (209 more columns hidden — not referenced downstream)
+
+  SCHEMA : #DwhTresDbFmOds.DbSchema#
+  TABLE  : TB_TRRFMO_TRD_REVCON_LST_OPT
+  COLUMNS PROJECTED (222 total, 0 used, 222 hidden):
+      ... (222 more columns hidden — not referenced downstream)
+
+  SCHEMA : #DwhTresDbStaging.DbSchema#
+  TABLE  : TB_QRDSTG_QRD_TRADE
+  COLUMNS PROJECTED (172 total, 5 used, 167 hidden):
+      - QRD_EMBED_OPT_SWP
+      - QRD_STRIKE_CCY
+      - QRD_STRIKE_PRICE
+      - QRD_INIT_FIX_RATE2
+      - QRD_INIT_FIX_RATE1
+      ... (167 more columns hidden — not referenced downstream)
+
+  SCHEMA : #DwhTresDbStaging.DbSchema#
+  TABLE  : TB_QRFSTG_QRD_TRADE_FULL
+  COLUMNS PROJECTED (256 total, 5 used, 251 hidden):
+      - QRF_SETTLEMENT_CCY1
+      - QRF_SETTLEMENT_TYPE
+      - QRF_STRIKE_PRICE
+      - QRF_UNITS_TYPE_QTY1
+      - QRF_PRICE_PX_VAL1
+      ... (251 more columns hidden — not referenced downstream)
+
+  SCHEMA : #DwhTresDbStaging.DbSchema#
+  TABLE  : TB_SUNDSTG_DEALS
+  COLUMNS PROJECTED (50 total, 5 used, 45 hidden):
+      - VEGA_NOTIONAL
+      - UNITS
+      - STRIKE_PRICE
+      - PRICE
+      - FORWARD_PRICE
+      ... (45 more columns hidden — not referenced downstream)
+
+  SCHEMA : (unknown)
+  TABLE  : VW_BPS_POSITIONS
+  COLUMNS PROJECTED (38 total, 6 used, 32 hidden):
+      - UNDERLYING_SEC_DESC
+      - UNDERLYING_SECURITY
+      - STRIKE_PRICE
+      - OPTION_TYPE
+      - SECURITY_MATURITY
+      - CUSIP
+      ... (32 more columns hidden — not referenced downstream)
+
+  SCHEMA : #DwhTresDbFmOds.DbSchema#
+  TABLE  : TB_THDFMO_TRD_HEADR
+  COLUMNS PROJECTED (7 total, 0 used, 7 hidden):
+      ... (7 more columns hidden — not referenced downstream)
+
+  SCHEMA : #DwhTresDbFmOds.DbSchema#
+  TABLE  : TB_INSFMO_INSTRUMENT
+  COLUMNS PROJECTED (7 total, 0 used, 7 hidden):
+      ... (7 more columns hidden — not referenced downstream)
+
+  SCHEMA : #DwhTresDbFmOds.DbSchema#
+  TABLE  : TB_RIIFMO_REF_INSTR_ID
+  COLUMNS PROJECTED (7 total, 0 used, 7 hidden):
+      ... (7 more columns hidden — not referenced downstream)
+
+  SCHEMA : #DwhTresDbFmOds.DbSchema#
+  TABLE  : TB_RINFMO_REF_INSTR
+  COLUMNS PROJECTED (7 total, 0 used, 7 hidden):
+      ... (7 more columns hidden — not referenced downstream)
+
+  SCHEMA : #DwhTresDbFmOds.DbSchema#
+  TABLE  : TB_RINFMO_REF_INSTR
+  COLUMNS PROJECTED (7 total, 0 used, 7 hidden):
+      ... (7 more columns hidden — not referenced downstream)
+
+  SCHEMA : #DwhTresDbFmOds.DbSchema#
+  TABLE  : TB_TROFMO_OPT_TRD
+  COLUMNS PROJECTED (7 total, 0 used, 7 hidden):
+      ... (7 more columns hidden — not referenced downstream)
+
+  SCHEMA : #DwhTresDbFmOds.DbSchema#
+  TABLE  : TB_THDFMO_TRD_HEADR
+  COLUMNS PROJECTED (7 total, 0 used, 7 hidden):
+      ... (7 more columns hidden — not referenced downstream)
+
+  SCHEMA : #DwhTresDbFmOds.DbSchema#
+  TABLE  : TB_INSFMO_INSTRUMENT
+  COLUMNS PROJECTED (7 total, 0 used, 7 hidden):
+      ... (7 more columns hidden — not referenced downstream)
+
+  SCHEMA : #DwhTresDbFmOds.DbSchema#
+  TABLE  : TB_RIIFMO_REF_INSTR_ID
+  COLUMNS PROJECTED (7 total, 0 used, 7 hidden):
+      ... (7 more columns hidden — not referenced downstream)
+
+  SCHEMA : #DwhTresDbFmOds.DbSchema#
+  TABLE  : TB_RINFMO_REF_INSTR
+  COLUMNS PROJECTED (7 total, 0 used, 7 hidden):
+      ... (7 more columns hidden — not referenced downstream)
+
+  SCHEMA : #DwhTresDbFmOds.DbSchema#
+  TABLE  : TB_RINFMO_REF_INSTR
+  COLUMNS PROJECTED (7 total, 0 used, 7 hidden):
+      ... (7 more columns hidden — not referenced downstream)
+
+  SCHEMA : #DwhTresDbFmOds.DbSchema#
+  TABLE  : TB_RINFMO_REF_INSTR
+  COLUMNS PROJECTED (7 total, 0 used, 7 hidden):
+      ... (7 more columns hidden — not referenced downstream)
+
+  SCHEMA : #DwhTresDbFmOds.DbSchema#
+  TABLE  : TB_TROFMO_OPT_TRD
+  COLUMNS PROJECTED (7 total, 0 used, 7 hidden):
+      ... (7 more columns hidden — not referenced downstream)
+
+  SCHEMA : (unknown)
+  TABLE  : AND
+
+  SCHEMA : #DwhTresDbBPSA.DbNameNbcfidb#.#DwhTresDbBPSA.DbSchema#
+  TABLE  : VW_BPS_POSITIONS
+
+------------------------------------------------------------------------------
+ 2. FIELD-BY-FIELD MAPPINGS  (SOURCE  -->  DESTINATION)
+------------------------------------------------------------------------------
+
+  >>> DESTINATION LINK / STAGE : Ln_RDARR
+      SOURCE                                         -->   DESTINATION
+      ---------------------------------------------        ----------------------------------------
+      ln_STG.FORWARD_PRICE                           -->   Ln_RDARR.DEA_FORWARD_PRICE   (line 727)
+      ln_STG.PRICE                                   -->   Ln_RDARR.DEA_PRICE   (line 728)
+      ln_STG.STRIKE_PRICE                            -->   Ln_RDARR.DEA_STRIKE_PRICE   (line 729)
+      ln_STG.UNITS                                   -->   Ln_RDARR.DEA_UNITS   (line 730)
+      ln_STG.VEGA_NOTIONAL                           -->   Ln_RDARR.DEA_VEGA_NOTIONAL_AMT   (line 731)
+
+  >>> DESTINATION LINK / STAGE : Ln_SDH
+      SOURCE                                         -->   DESTINATION
+      ---------------------------------------------        ----------------------------------------
+      Ln_StgData.QRF_PRICE_PX_VAL1                   -->   Ln_SDH.PRICE_1_PRICE   (line 713)
+      Ln_StgData.QRF_UNITS_TYPE_QTY1                 -->   Ln_SDH.PRICE_1_UNITS   (line 714)
+      Ln_StgData.QRF_STRIKE_PRICE                    -->   Ln_SDH.STRIKE_PRICE   (line 715)
+      Ln_StgData.QRF_SETTLEMENT_TYPE                 -->   Ln_SDH.SETTLEMENT_TYPE   (line 716)
+      Ln_StgData.QRF_SETTLEMENT_CCY1                 -->   Ln_SDH.SETTLEMENT_CURRENCY_1   (line 717)
+
+  >>> DESTINATION LINK / STAGE : Ln_To_SDH1
+      SOURCE                                         -->   DESTINATION
+      ---------------------------------------------        ----------------------------------------
+      Ln_Input.QRD_INIT_FIX_RATE1                    -->   Ln_To_SDH1.LEG1_FIXED_RATE_INITIAL   (line 720)
+      Ln_Input.QRD_INIT_FIX_RATE2                    -->   Ln_To_SDH1.LEG2_FIXED_RATE_INITIAL   (line 721)
+      Ln_Input.QRD_STRIKE_PRICE                      -->   Ln_To_SDH1.STRIKE_PRICE   (line 722)
+      Ln_Input.QRD_STRIKE_CCY                        -->   Ln_To_SDH1.STRIKE_PRICE_CURRENCY   (line 723)
+      Ln_Input.QRD_EMBED_OPT_SWP                     -->   Ln_To_SDH1.EMBEDDED_OPTION_ON_SWAP   (line 724)
+
+  >>> DESTINATION LINK / STAGE : lnk_MurexFields
+      SOURCE                                         -->   DESTINATION
+      ---------------------------------------------        ----------------------------------------
+      lnk_DataSet_BPSA_Positions.SECURITY_MATURITY   -->   lnk_MurexFields.MATURITY   (line 748)
+      lnk_DataSet_BPSA_Positions.OPTION_TYPE         -->   lnk_MurexFields.CALL_PUT   (line 749)
+      lnk_DataSet_BPSA_Positions.STRIKE_PRICE        -->   lnk_MurexFields.STRIKE   (line 750)
+      lnk_DataSet_BPSA_Positions.UNDERLYING_SECURITY  -->   lnk_MurexFields.UND_SECCODE   (line 751)
+      lnk_DataSet_BPSA_Positions.UNDERLYING_SEC_DESC  -->   lnk_MurexFields.UND_DESC   (line 752)
+
+  >>> DESTINATION LINK / STAGE : lnk_OutToDB
+      SOURCE                                         -->   DESTINATION
+      ---------------------------------------------        ----------------------------------------
+      lnk_AllData.CUSIP                              -->   lnk_OutToDB.CMO_CUSIP   (line 734)
+      lnk_AllData.PUT_CALL                           -->   lnk_OutToDB.CMO_PUTCALL   (line 735)
+      lnk_AllData.STRIKE_PRICE                       -->   lnk_OutToDB.CMO_STRIKEPRICE   (line 736)
+      lnk_AllData.AMERICAN_EURO                      -->   lnk_OutToDB.CMO_AMERICANEURO   (line 737)
+      lnk_AllData.YIELD                              -->   lnk_OutToDB.CMO_YIELD   (line 738)
+      lnk_OutToTempFile.OPTION_TYPE                  -->   lnk_OutToDB.MTR_OPTION_TYPE   (line 769)
+      lnk_OutToTempFile.OPTION_STYLE                 -->   lnk_OutToDB.MTR_OPTION_STYLE   (line 770)
+      lnk_OutToTempFile.STRIKE_PRICE_TYPE            -->   lnk_OutToDB.MTR_STRIKE_PRICE_TYPE   (line 771)
+      lnk_OutToTempFile.STRIKE_PRICE                 -->   lnk_OutToDB.MTR_STRIKE_PRICE   (line 772)
+      lnk_OutToTempFile.STRIKE_PRICE_CCY             -->   lnk_OutToDB.MTR_STRIKE_PRICE_CCY   (line 773)
+
+  >>> DESTINATION LINK / STAGE : lnk_SDH
+      SOURCE                                         -->   DESTINATION
+      ---------------------------------------------        ----------------------------------------
+      lnk_InFromDB.MTR_OPTION_TYPE                   -->   lnk_SDH.OPTION_TYPE   (line 776)
+      lnk_InFromDB.MTR_OPTION_STYLE                  -->   lnk_SDH.OPTION_STYLE   (line 777)
+      lnk_InFromDB.MTR_STRIKE_PRICE_TYPE             -->   lnk_SDH.STRIKE_PRICE_TYPE   (line 778)
+      lnk_InFromDB.MTR_STRIKE_PRICE                  -->   lnk_SDH.STRIKE_PRICE   (line 779)
+      lnk_InFromDB.MTR_STRIKE_PRICE_CCY              -->   lnk_SDH.STRIKE_PRICE_CCY   (line 780)
+
+  >>> DESTINATION LINK / STAGE : lnk_ToRmDp
+      SOURCE                                         -->   DESTINATION
+      ---------------------------------------------        ----------------------------------------
+      lnk_InFromDB.MTR_QTY_UNIT                      -->   lnk_ToRmDp.TRR_QTY_UNIT  [string[max=255]]   (line 819)
+      lnk_InFromDB.MTR_PRICE_TIME_INTERVL_QTY        -->   lnk_ToRmDp.TRR_PRICE_TIME_INTERVL_QTY  [string[max=255]]   (line 820)
+
+------------------------------------------------------------------------------
+ 3. COLUMN DEFINITIONS WITH DERIVATIONS
+------------------------------------------------------------------------------
+   (none found)
+
+------------------------------------------------------------------------------
+ 3b. GENERATED TRANSFORM OPERATORS  (custom stage code)
+------------------------------------------------------------------------------
+   (none found)
+
+------------------------------------------------------------------------------
+ 4. END-TO-END LINEAGE CHAINS
+    (Read left-to-right: PHYSICAL SOURCE --> staging link --> target link)
+------------------------------------------------------------------------------
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRFSTG_QRD_TRADE_FULL.QRF_PRICE_PX_VAL1  -->  Ln_StgData.QRF_PRICE_PX_VAL1  -->  Ln_SDH.PRICE_1_PRICE
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRFSTG_QRD_TRADE_FULL.QRF_UNITS_TYPE_QTY1  -->  Ln_StgData.QRF_UNITS_TYPE_QTY1  -->  Ln_SDH.PRICE_1_UNITS
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRFSTG_QRD_TRADE_FULL.QRF_STRIKE_PRICE  -->  Ln_StgData.QRF_STRIKE_PRICE  -->  Ln_SDH.STRIKE_PRICE
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRFSTG_QRD_TRADE_FULL.QRF_SETTLEMENT_TYPE  -->  Ln_StgData.QRF_SETTLEMENT_TYPE  -->  Ln_SDH.SETTLEMENT_TYPE
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRFSTG_QRD_TRADE_FULL.QRF_SETTLEMENT_CCY1  -->  Ln_StgData.QRF_SETTLEMENT_CCY1  -->  Ln_SDH.SETTLEMENT_CURRENCY_1
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_INIT_FIX_RATE1  -->  Ln_Input.QRD_INIT_FIX_RATE1  -->  Ln_To_SDH1.LEG1_FIXED_RATE_INITIAL
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_INIT_FIX_RATE2  -->  Ln_Input.QRD_INIT_FIX_RATE2  -->  Ln_To_SDH1.LEG2_FIXED_RATE_INITIAL
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_STRIKE_PRICE  -->  Ln_Input.QRD_STRIKE_PRICE  -->  Ln_To_SDH1.STRIKE_PRICE
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_STRIKE_CCY  -->  Ln_Input.QRD_STRIKE_CCY  -->  Ln_To_SDH1.STRIKE_PRICE_CURRENCY
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_EMBED_OPT_SWP  -->  Ln_Input.QRD_EMBED_OPT_SWP  -->  Ln_To_SDH1.EMBEDDED_OPTION_ON_SWAP
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_SUNDSTG_DEALS.FORWARD_PRICE  -->  ln_STG.FORWARD_PRICE  -->  Ln_RDARR.DEA_FORWARD_PRICE
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_SUNDSTG_DEALS.PRICE  -->  ln_STG.PRICE  -->  Ln_RDARR.DEA_PRICE
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_SUNDSTG_DEALS.STRIKE_PRICE  -->  ln_STG.STRIKE_PRICE  -->  Ln_RDARR.DEA_STRIKE_PRICE
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_SUNDSTG_DEALS.UNITS  -->  ln_STG.UNITS  -->  Ln_RDARR.DEA_UNITS
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_SUNDSTG_DEALS.VEGA_NOTIONAL  -->  ln_STG.VEGA_NOTIONAL  -->  Ln_RDARR.DEA_VEGA_NOTIONAL_AMT
+
+   [PHYSICAL] (unknown).VW_BPS_POSITIONS.CUSIP  -->  lnk_AllData.CUSIP  -->  lnk_OutToDB.CMO_CUSIP
+
+   lnk_AllData.PUT_CALL  -->  lnk_OutToDB.CMO_PUTCALL
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_SUNDSTG_DEALS.STRIKE_PRICE  -->  lnk_AllData.STRIKE_PRICE  -->  lnk_OutToDB.CMO_STRIKEPRICE
+
+   lnk_AllData.AMERICAN_EURO  -->  lnk_OutToDB.CMO_AMERICANEURO
+
+   lnk_AllData.YIELD  -->  lnk_OutToDB.CMO_YIELD
+
+   [PHYSICAL] (unknown).VW_BPS_POSITIONS.SECURITY_MATURITY  -->  lnk_DataSet_BPSA_Positions.SECURITY_MATURITY  -->  lnk_MurexFields.MATURITY
+
+   [PHYSICAL] (unknown).VW_BPS_POSITIONS.OPTION_TYPE  -->  lnk_DataSet_BPSA_Positions.OPTION_TYPE  -->  lnk_MurexFields.CALL_PUT
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_SUNDSTG_DEALS.STRIKE_PRICE  -->  lnk_DataSet_BPSA_Positions.STRIKE_PRICE  -->  lnk_MurexFields.STRIKE
+
+   [PHYSICAL] (unknown).VW_BPS_POSITIONS.UNDERLYING_SECURITY  -->  lnk_DataSet_BPSA_Positions.UNDERLYING_SECURITY  -->  lnk_MurexFields.UND_SECCODE
+
+   [PHYSICAL] (unknown).VW_BPS_POSITIONS.UNDERLYING_SEC_DESC  -->  lnk_DataSet_BPSA_Positions.UNDERLYING_SEC_DESC  -->  lnk_MurexFields.UND_DESC
+
+   [PHYSICAL] (unknown).VW_BPS_POSITIONS.OPTION_TYPE  -->  lnk_OutToTempFile.OPTION_TYPE  -->  lnk_OutToDB.MTR_OPTION_TYPE
+
+   lnk_OutToTempFile.OPTION_STYLE  -->  lnk_OutToDB.MTR_OPTION_STYLE
+
+   lnk_OutToTempFile.STRIKE_PRICE_TYPE  -->  lnk_OutToDB.MTR_STRIKE_PRICE_TYPE
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_SUNDSTG_DEALS.STRIKE_PRICE  -->  lnk_OutToTempFile.STRIKE_PRICE  -->  lnk_OutToDB.MTR_STRIKE_PRICE
+
+   lnk_OutToTempFile.STRIKE_PRICE_CCY  -->  lnk_OutToDB.MTR_STRIKE_PRICE_CCY
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_MTRSTG_MRX_REVCON_LST_OPT.MTR_OPTION_TYPE  -->  lnk_InFromDB.MTR_OPTION_TYPE  -->  lnk_SDH.OPTION_TYPE
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_MTRSTG_MRX_REVCON_LST_OPT.MTR_OPTION_STYLE  -->  lnk_InFromDB.MTR_OPTION_STYLE  -->  lnk_SDH.OPTION_STYLE
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_MTRSTG_MRX_REVCON_LST_OPT.MTR_STRIKE_PRICE_TYPE  -->  lnk_InFromDB.MTR_STRIKE_PRICE_TYPE  -->  lnk_SDH.STRIKE_PRICE_TYPE
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_MTRSTG_MRX_REVCON_LST_OPT.MTR_STRIKE_PRICE  -->  lnk_InFromDB.MTR_STRIKE_PRICE  -->  lnk_SDH.STRIKE_PRICE
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_MTRSTG_MRX_REVCON_LST_OPT.MTR_STRIKE_PRICE_CCY  -->  lnk_InFromDB.MTR_STRIKE_PRICE_CCY  -->  lnk_SDH.STRIKE_PRICE_CCY
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_MTRSTG_MRX_REVCON_LST_OPT.MTR_QTY_UNIT  -->  lnk_InFromDB.MTR_QTY_UNIT  -->  lnk_ToRmDp.TRR_QTY_UNIT
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_MTRSTG_MRX_REVCON_LST_OPT.MTR_PRICE_TIME_INTERVL_QTY  -->  lnk_InFromDB.MTR_PRICE_TIME_INTERVL_QTY  -->  lnk_ToRmDp.TRR_PRICE_TIME_INTERVL_QTY
+
+------------------------------------------------------------------------------
+ 5. ITEMS MENTIONING "STRIKE_PRICE"
+------------------------------------------------------------------------------
+
+   Field-level chains:
+      [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRFSTG_QRD_TRADE_FULL.QRF_STRIKE_PRICE  -->  Ln_StgData.QRF_STRIKE_PRICE  -->  Ln_SDH.STRIKE_PRICE
+      [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_STRIKE_PRICE  -->  Ln_Input.QRD_STRIKE_PRICE  -->  Ln_To_SDH1.STRIKE_PRICE
+      [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_STRIKE_CCY  -->  Ln_Input.QRD_STRIKE_CCY  -->  Ln_To_SDH1.STRIKE_PRICE_CURRENCY
+      [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_SUNDSTG_DEALS.STRIKE_PRICE  -->  ln_STG.STRIKE_PRICE  -->  Ln_RDARR.DEA_STRIKE_PRICE
+      [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_SUNDSTG_DEALS.STRIKE_PRICE  -->  lnk_AllData.STRIKE_PRICE  -->  lnk_OutToDB.CMO_STRIKEPRICE
+      [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_SUNDSTG_DEALS.STRIKE_PRICE  -->  lnk_DataSet_BPSA_Positions.STRIKE_PRICE  -->  lnk_MurexFields.STRIKE
+      lnk_OutToTempFile.STRIKE_PRICE_TYPE  -->  lnk_OutToDB.MTR_STRIKE_PRICE_TYPE
+      [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_SUNDSTG_DEALS.STRIKE_PRICE  -->  lnk_OutToTempFile.STRIKE_PRICE  -->  lnk_OutToDB.MTR_STRIKE_PRICE
+      lnk_OutToTempFile.STRIKE_PRICE_CCY  -->  lnk_OutToDB.MTR_STRIKE_PRICE_CCY
+      [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_MTRSTG_MRX_REVCON_LST_OPT.MTR_STRIKE_PRICE_TYPE  -->  lnk_InFromDB.MTR_STRIKE_PRICE_TYPE  -->  lnk_SDH.STRIKE_PRICE_TYPE
+      [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_MTRSTG_MRX_REVCON_LST_OPT.MTR_STRIKE_PRICE  -->  lnk_InFromDB.MTR_STRIKE_PRICE  -->  lnk_SDH.STRIKE_PRICE
+      [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_MTRSTG_MRX_REVCON_LST_OPT.MTR_STRIKE_PRICE_CCY  -->  lnk_InFromDB.MTR_STRIKE_PRICE_CCY  -->  lnk_SDH.STRIKE_PRICE_CCY
+
+==============================================================================
+ END OF REPORT
+==============================================================================
