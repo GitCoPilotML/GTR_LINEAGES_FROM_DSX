@@ -1,0 +1,582 @@
+==============================================================================
+ DATA LINEAGE REPORT
+ Field of interest          : SELLER
+ Input  file                : C:\NBC\GTR\GTR_LINEAGE_TRACE\SELLER_LINEAGE_TRACE.txt
+ Output file                : C:\NBC\GTR\GTR_LINEAGE_REPORTS\SELLER_LINEAGE_REPORT.txt
+ Filter unused source cols  : False
+==============================================================================
+
+------------------------------------------------------------------------------
+ 0. JOB PIPELINE(S)  (stage-by-stage flow of the data)
+------------------------------------------------------------------------------
+   (no StageNames lists found in this file)
+
+------------------------------------------------------------------------------
+ 1. PHYSICAL SOURCE TABLES (from embedded SQL / XML)
+------------------------------------------------------------------------------
+
+  SCHEMA : #DwhTresDbStaging.DbSchema#
+  TABLE  : TB_QRDSTG_QRD_TRADE
+  COLUMNS PROJECTED (172 total):
+      - QRD_HEDGE_CONF_TYPE
+      - QRD_BARRIER_TYPE
+      - QRD_PKG_NAME
+      - QRD_EQUIV_NOMINAL
+      - QRD_PORTFOLIO
+      - QRD_PRODUCT_NAME
+      - QRD_EVNT_EXCTN_ID
+      - QRD_EVNT_SALES_ID
+      - QRD_CONTRCT_ID
+      - QRD_PKG_TRANSCTN_SPRD_NOTATN
+      - QRD_PKG_TRANSCTN_SPRD_CCY_CODE
+      - QRD_PKG_TRANSCTN_SPRD
+      - QRD_PKG_TRANSCTN_PRICE_NOTATN
+      - QRD_PKG_TRANSCTN_PRICE_CCY
+      - QRD_PKG_TRANSCTN_PRICE
+      - QRD_VALUATION_METHOD
+      - QRD_PREVIOUS_DAY_DELTA
+      - QRD_DELTA
+      - QRD_LST_FLT_REF_RST_LEG2_DATE
+      - QRD_LST_FLT_REF_RST_LEG1_DATE
+      - QRD_LAST_FLOAT_REF_VALUE_LEG2
+      - QRD_LAST_FLOAT_REF_VALUE_LEG1
+      - QRD_NXT_FLT_REF_RST_LEG2_DATE
+      - QRD_NXT_FLT_REF_RST_LEG1_DATE
+      - QRD_BUSINESS_EVENT
+      - QRD_CUSTOM_BASKET_IND
+      - QRD_POST_PRICED_SWAP_IND
+      - QRD_UNWOUND_QUANTITY
+      - QRD_UNWOUND_NOTIONAL_AMT_2
+      - QRD_UNWOUND_NOTIONAL_AMT_1
+      - QRD_SEC_ANE
+      - QRD_SEC_MXSWP
+      - QRD_SEC_RPTPTY
+      - QRD_UNDERL_ASSET_NAME
+      - QRD_UNDERL_FLOAT_RATE_PAYER
+      - QRD_UNDERL_FIX_RATE_PAYER
+      - QRD_REPORTING_PARTY_CA_FLG
+      - QRD_CFTC_REPORTING_PARTY_FLG
+      - QRD_MID_MARK_TYPE
+      - QRD_MID_MARK_CCY
+      - QRD_MID_MARK_DATE
+      - QRD_MID_MARK_COMM_MODE
+      - QRD_MID_MARK_VAL
+      - QRD_SALED_ID
+      - QRD_EXECUTION_ID
+      - QRD_SUBSTITUTION_RIGHT
+      - QRD_NARROW_IDX
+      - QRD_PACKAGE_ID
+      - QRD_UNDERL_ASSET_ID_TYPE
+      - QRD_UNDERL_ASSET_ID
+      - QRD_PREMIUM_CCY
+      - QRD_PREMIUM_AMT
+      - QRD_UNITS_TYPE_QTY2
+      - QRD_UNITS_TYPE_QTY1
+      - QRD_PRICE_PX_VAL2
+      - QRD_PRICE_PX_VAL1
+      - QRD_PAYMENT_DATE_1
+      - QRD_NOTIONAL_QTY
+      - QRD_RESP_DATA_SUBM_ID
+      - QRD_RESP_DATA_SUBM_ID_TYPE
+      - QRD_TRADE_PARTY_BROKER_ID2
+      - QRD_TRADE_PARTY_BROKERID_TYPE2
+      - QRD_TRADE_PARTY_BROKER_ID1
+      - QRD_TRADE_PARTY_BROKERID_TYPE1
+      - QRD_TRADE_PARTY_COLL_TYPE2
+      - QRD_TRADE_PARTY_COLL_TYPE1
+      - QRD_EXECUTION_VENUE_ID_TYPE
+      - QRD_EXECUTION_VENUE_ID
+      - QRD_INTER_AFFILIATE
+      - QRD_MASTER_AGREE_VERSION
+      - QRD_MASTER_AGREE_TYPE
+      - QRD_CONFIRMATION_DATE
+      - QRD_CONFIRMATION_METH
+      - QRD_PRIOR_UTI_TYPE
+      - QRD_PRIOR_USI_TYPE
+      - QRD_SETTLEMENT_TYPE
+      - QRD_FLOAT_RATE_IDX2
+      - QRD_FLOAT_RATE_IDX1
+      - QRD_RESERV_PART_USE5
+      - QRD_RESERV_PART_USE4
+      - QRD_RESERV_PART_USE3
+      - QRD_RESERV_PART_USE2
+      - QRD_RESERV_PART_USE1
+      - QRD_CLEAR_EXEP_PARTY_ID
+      - QRD_CLEAR_EXEP_PARTY_ID_TYPE
+      - QRD_TRADE_PARTY_LOC_CPTY_JUR2
+      - QRD_TRADE_PARTY_LOC_CPTY_JUR1
+      - QRD_VERSION
+      - QRD_TRADE_PARTY_TRADENUM2
+      - QRD_TRADE_PARTY_ROLE_2
+      - QRD_TRD_PARTY_EXEC_AGNTID_TYP2
+      - QRD_TRADE_PARTY_EXEC_AGNT_ID2
+      - QRD_TRADE_PARTY_EVENT_ID2
+      - QRD_TRADE_PARTY_TRADENUM1
+      - QRD_TRADE_PARTY_ROLE_1
+      - QRD_TRD_PARTY_EXEC_AGNTID_TYP1
+      - QRD_TRADE_PARTY_EXEC_AGNT_ID1
+      - QRD_TRADE_PARTY_EVENT_ID1
+      - QRD_PRODUCT_TYPE
+      - QRD_PRODUCT_ID
+      - QRD_OPT_TYPE
+      - QRD_OPT_STYLE
+      - QRD_CLEAR_SWP_SDR_LEI_ID
+      - QRD_MESSAGE_TYPE
+      - QRD_MESSAGE_ID
+      - QRD_COMMENT1
+      - QRD_SECOND_ASSET_CLASS
+      - QRD_PRIMARY_ASSET_CLASS
+      - QRD_TRADE_PARTY_REPOTING_DEST2
+      - QRD_TRADE_PARTY_REPOTING_DEST1
+      - QRD_SUBMIT_FOR_PARTY
+      - QRD_EXECUTION_VENUE_TYPE
+      - QRD_LIFECYCLE_EVENT_TYPE
+      - QRD_TRADE_TYPE
+      - QRD_ACTION
+      - QRD_UTI_ID_PFX
+      - QRD_UTI_ID
+      - QRD_USI_ID_PFX
+      - QRD_USI_ID
+      - QRD_PRIOR_UTI_ID_PFX
+      - QRD_PRIOR_UTI_ID
+      - QRD_PRIOR_USI_ID_PFX
+      - QRD_PRIOR_USI_ID
+      - QRD_REPORTING_DATE
+      - QRD_ORIG_EXEC_DATE
+      - QRD_SCHED_TERM_DATE2
+      - QRD_SCHED_TERM_DATE1
+      - QRD_EXPIRY_DATE
+      - QRD_TRADE_DATE
+      - QRD_EFFECTIVE_DATE1
+      - QRD_LARGE_TRADE_IND
+      - QRD_NON_STAND_TRADE_IND
+      - QRD_ALLOCATION_TYPE
+      - QRD_SETTLEMENT_CCY2
+      - QRD_SETTLEMENT_CCY1
+      - QRD_EMBED_OPT_SWP
+      - QRD_STRIKE_CCY
+      - QRD_STRIKE_PRICE
+      - QRD_INIT_FIX_RATE2
+      - QRD_INIT_FIX_RATE1
+      - QRD_PAY_FREQ_PERIOD_MULT_2
+      - QRD_PAY_FREQ_PERIOD_MULT_1
+      - QRD_PAY_FREQ_PERIOD2
+      - QRD_PAY_FREQ_PERIOD1
+      - QRD_RESET_FREQ_PERIOD_MULT_2
+      - QRD_RESET_FREQ_PERIOD_MULT_1
+      - QRD_RESET_FREQ_PERIOD2
+      - QRD_RESET_FREQ_PERIOD1
+      - QRD_DAY_COUNT_FRACT2
+      - QRD_DAY_COUNT_FRACT1
+      - QRD_NOTIONAL_CCY2
+      - QRD_NOTIONAL_CCY1
+      - QRD_NOTIONAL_AMT2
+      - QRD_NOTIONAL_AMT1
+      - QRD_LATE_EXEC_DATE
+      - QRD_SUBMIT_PARTY_ID_TYPE
+      - QRD_SUBMIT_PARTY_ID
+      - QRD_PAYER_ID2
+      - QRD_PAYER_ID1
+      - QRD_SELLER_ID
+      - QRD_BUYER_ID
+      - QRD_TRD_PARTY_CFTC_FIN_ENT_ST2
+      - QRD_TRD_PARTY_CFTC_FIN_ENT_ST1
+      - QRD_TRADE_PARTY_ID_TYPE2
+      - QRD_TRADE_PARTY_ID2
+      - QRD_TRADE_PARTY_ID_TYPE_1
+      - QRD_TRADE_PARTY_ID_1
+      - CTL_EXTRACTDATE
+      - CTL_SITE
+      - CTL_SYSTEMNAME
+      - CTL_DIVISION
+      - NEXTVAL                             (from QRD_SID   aliased as QRD_SID)
+
+  SCHEMA : #DwhTresDbStaging.DbSchema#
+  TABLE  : TB_QRFSTG_QRD_TRADE_FULL
+  COLUMNS PROJECTED (256 total):
+      - QRF_PREV_DAY_DELTA
+      - QRF_LEG_1_OTHR_UNDRL_SRC
+      - QRF_LEG1_UNDRL_PRICE_SRC
+      - QRF_LEG_1_OTHR_UNDRL_ID
+      - QRF_BASKET_CONST_UNIT_MEAS
+      - QRF_BASKET_CONST_NB_UNIT
+      - QRF_BASKET_CONST_IND_SRC
+      - QRF_BASKET_CONST_IND
+      - QRF_CUSTOM_BASKET_CODE
+      - QRF_STRIKE_PRICE_SCHDL
+      - QRF_EFFECT_DATE_STRIKE
+      - QRF_CONTRACT_ID
+      - QRF_ANE
+      - QRF_MIXED_SWAPS
+      - QRF_SEC_REPORTING_PARTY
+      - QRF_CFTC_REPORTING_PARTY
+      - QRF_CANADA_REPORTING_PTY
+      - QRF_UPI_UNDRL_INSTR_UPI
+      - QRF_UPI_OPT_EXERCS_STYLE
+      - QRF_UPI_OPT_TYPE
+      - QRF_UPI_DSB_UPI
+      - QRF_UPI_SINGLE_OR_MULT_CCY
+      - QRF_UPI_CLASSICATION_TYPE
+      - QRF_UPI_UNDRL_CHAR
+      - QRF_UPI_OTHER_LEG_UNDRL_CHAR
+      - QRF_UPI_DELIVERY_TYPE
+      - QRF_UPI_UNDRL_INST_IDX_TERMVAL
+      - QRF_UPI_UNDRL_INST_IDX_TERMUNT
+      - QRF_UPI_UNDRL_CRDT_IDX_SERIES
+      - QRF_UPI_PRODUCT
+      - QRF_UPI_LEVEL
+      - QRF_UPI_INSTR_TYPE
+      - QRF_UPI_ASSET_CLASS
+      - QRF_UPI_VALUATN_METHOD_OR_TRIG
+      - QRF_UPI_UNDRL_ASSET_TYPE
+      - QRF_UPI_RETURN_OR_PAYOUT_TRIG
+      - QRF_UPI_NOTNL_SCHDL
+      - QRF_VALUATN_METHOD
+      - QRF_DELTA
+      - QRF_LEG_2_LST_FLT_REF_RST_DATE
+      - QRF_LEG_1_LST_FLT_REF_RST_DATE
+      - QRF_LEG_2_LAST_FLOAT_REF_VAL
+      - QRF_LEG_1_LAST_FLOAT_REF_VAL
+      - QRF_LEG_2_NXT_FLT_REF_RST_DATE
+      - QRF_LEG_1_NXT_FLT_REF_RST_DATE
+      - QRF_LEG_2_CHANGE_IN_NOTNL_QTY
+      - QRF_LEG_1_CHANGE_IN_NOTNL_QTY
+      - QRF_CHANGE_IN_NOTNL_AMT_2
+      - QRF_CHANGE_IN_NOTNL_AMT_1
+      - QRF_CORP_ACT_NEW_TRD_PTY_1_LEI
+      - QRF_PHYS_CMDTY_CONTRACT_INDIC
+      - QRF_SD_MSP_INDIC_CPTY_2
+      - QRF_SD_MSP_INDIC_CPTY_1
+      - QRF_MANDT_CLRNG_INDIC
+      - QRF_SEF_OR_DCM_INDIC
+      - QRF_BLOCK_TRD_ELECTION_INDIC
+      - QRF_CDE_OTHER_PMT_DATE
+      - QRF_CDE_OTHER_PMT_CCY
+      - QRF_CDE_OTHER_PMT_AMT
+      - QRF_CDE_OTHER_PMT_TYPE
+      - QRF_VARTN_MARGN_COLL_PFL_CODE
+      - QRF_INIT_MARGN_COLL_PFL_CODE
+      - QRF_SEF_DCM_ANON_EXECUT_INDIC
+      - QRF_LEG_2_CDE_ED_NTNL_AMT_DATE
+      - QRF_LEG_1_CDE_ED_NTNL_AMT_DATE
+      - QRF_LEG_2_CDE_EF_NTNL_AMT_DATE
+      - QRF_LEG_1_CDE_EF_NTNL_AMT_DATE
+      - QRF_LEG_2_CDE_NTL_ASEFT_DT_AMT
+      - QRF_LEG_1_CDE_NTL_ASEFT_DT_AMT
+      - QRF_LG_NTL_OFFCLTY_SW_ELCT_IND
+      - QRF_NEW_SDR_ID
+      - QRF_SW_REP_JURISDICTION
+      - QRF_PRIME_BRKAGE_TRD_INDIC
+      - QRF_CDE_PLATFORM_IDENTIFIER
+      - QRF_CDE_EXPIRATION_DATE
+      - QRF_CDE_EFFECT_DATE
+      - QRF_LEG_1_CDE_SETTL_LOCATION
+      - QRF_CDE_FINAL_CNTRL_STLMT_DATE
+      - QRF_CDE_FIRST_EXERCISE_DATE
+      - QRF_CDE_STRIKE_PX_NOTATION
+      - QRF_CDE_STRIKE_PX_CCY_2
+      - QRF_LEG_2_CDE_SPREAD_NOTATION
+      - QRF_LEG_1_CDE_SPREAD_NOTATION
+      - QRF_CDE_PRICE_NOTATION
+      - QRF_CDE_PRICE_CCY
+      - QRF_POST_PRICED_SWAP_IND
+      - QRF_LEG_2_CDE_FLT_PMT_FRQ_PM
+      - QRF_LEG_1_CDE_FLT_PMT_FRQ_PM
+      - QRF_LEG_2_CDE_FXDRT_PMT_FRQ_PM
+      - QRF_LEG_1_CDE_FXDRT_PMT_FRQ_PM
+      - QRF_LEG_2_CDE_FLTRT_PMT_FRQPER
+      - QRF_LEG_1_CDE_FLTRT_PMT_FRQPER
+      - QRF_LEG_2_CDE_FXDRT_PMT_FRQPER
+      - QRF_LEG_1_CDE_FXDRT_PMT_FRQPER
+      - QRF_CDE_OTHER_PMT_RECEIVER
+      - QRF_CDE_OTHER_PMT_PAYER
+      - QRF_LEG_2_FIXING_DATE
+      - QRF_LEG_1_FIXING_DATE
+      - QRF_LEG_2_CDE_FLT_RT_DAY_CNT
+      - QRF_LEG_1_CDE_FLT_RT_DAY_CNT
+      - QRF_LEG_2_CDE_FXD_RT_DAY_CNT
+      - QRF_LEG_1_CDE_FXD_RT_DAY_CNT
+      - QRF_PKG_TRD_SPRD_NOTATION
+      - QRF_PKG_TRD_SPRD_CCY
+      - QRF_PKG_TRD_SPRD
+      - QRF_PKG_TRD_PRICE_NOTATION
+      - QRF_PKG_TRD_PRICE_CCY
+      - QRF_PKG_TRD_PRICE
+      - QRF_PACKAGE_ID
+      - QRF_PACKAGE_INDIC
+      - QRF_LEG_2_CDE_QTY_UNIT_OF_MSR
+      - QRF_LEG_1_CDE_QTY_UNIT_OF_MSR
+      - QRF_LEG_2_QTY_FREQ_MULT
+      - QRF_LEG_1_QTY_FREQ_MULT
+      - QRF_LEG_2_QTY_FREQ
+      - QRF_LEG_1_CDE_PUT_CCY
+      - QRF_LEG_1_CDE_PUT_AMT
+      - QRF_LEG_1_CDE_CALL_CCY
+      - QRF_LEG_1_CDE_CALL_AMT
+      - QRF_EVENT_ID
+      - QRF_AMENDMENT_INDIC
+      - QRF_EVENT_TYPE
+      - QRF_NOA_ACT_TYPE
+      - QRF_CUSTOM_BASKET_IND
+      - QRF_CPTY_2_FED_ENTITY_INDIC
+      - QRF_CPTY_1_FED_ENTITY_INDIC
+      - QRF_LEG_2_CDE_RECEIVER_ID
+      - QRF_CLRNG_EXCEPT_TYPE_PTY_2
+      - QRF_ORIGINAL_SW_UTI
+      - QRF_ORIGINAL_SW_USI
+      - QRF_RESP_DATA_SUBM_ID
+      - QRF_RESP_DATA_SUBM_ID_TYPE
+      - QRF_LEG_1_SETTL_PRD
+      - QRF_INTER_AFFILIATE
+      - QRF_TRD_PTY_LOC_CPTY_JUR2
+      - QRF_TRD_PTY_LOC_CPTY_JUR1
+      - QRF_ALLOCATION_TYPE
+      - QRF_TRD_PTY_CFTC_FIN_ENT_ST2
+      - QRF_TRD_PTY_CFTC_FIN_ENT_ST1
+      - QRF_CLRNG_EXCEPTION_TYPE
+      - QRF_CLRNG_RECEIPT_DTTIME
+      - QRF_ORIGINAL_SW_SDR_ID
+      - QRF_CLRNG_SW_UTI_ID
+      - QRF_CLRNG_SW_USI_ID
+      - QRF_CLRNG_MEMB_CLIENT_ACCNT_ID
+      - QRF_ORIGIN
+      - QRF_EMBED_OPT_SWP
+      - QRF_LEG_2_SPRD_CCY
+      - QRF_LEG_2_SPRD_AMT
+      - QRF_LEG_2_NOTNL_QTY
+      - QRF_LEG_2_CMDTY_UNDRL_ID
+      - QRF_LEG_1_SPRD_CCY
+      - QRF_LEG_1_SPRD_AMT
+      - QRF_LEG_1_NOTNL_QTY
+      - QRF_LEG_1_CMDTY_UNDRL_ID
+      - QRF_CO_PRODUCT_TYPE
+      - QRF_PMT_1_RECVR
+      - QRF_SECOND_ASSET_CLASS
+      - QRF_NON_STAND_TRD_IND
+      - QRF_REPORTING_DATE
+      - QRF_PRODUCT_GRADE
+      - QRF_DLVR_LCTN
+      - QRF_LEG_2_TOTAL_NOTNL_QTY
+      - QRF_LEG_2_CMDTY_INSTR_ID
+      - QRF_LEG_1_TOTAL_NOTNL_QTY
+      - QRF_LEG_1_QTY_FREQ
+      - QRF_LEG_1_CMDTY_INSTR_ID
+      - QRF_STRIKE_CCY
+      - QRF_PAYER_ID2
+      - QRF_PAYER_ID1
+      - QRF_UNDRL_ASSET_NAME
+      - QRF_UNDRL_ASSET_ID
+      - QRF_UNDRL_ASSET_ID_TYPE
+      - QRF_SELLER_ID
+      - QRF_BUYER_ID
+      - QRF_LATE_EXEC_DATE
+      - QRF_PRIOR_UTI_ID
+      - QRF_PRIOR_UTI_ID_PFX
+      - QRF_PRIOR_USI_ID
+      - QRF_PRIOR_USI_ID_PFX
+      - QRF_USI_ID
+      - QRF_USI_ID_PFX
+      - QRF_PREMIUM_CCY
+      - QRF_PREMIUM_AMT
+      - QRF_TRD_LEG_TYPES
+      - QRF_TRD_PTY_COLL_TYPE1
+      - QRF_PREMIUM_PMT_UNAJSTD_DATE
+      - QRF_LOAD_TYPE
+      - QRF_RESET_FREQ_PERIOD_MULT_2
+      - QRF_RESET_FREQ_PERIOD_MULT_1
+      - QRF_RESET_FREQ_PERIOD2
+      - QRF_RESET_FREQ_PERIOD1
+      - QRF_SETTLEMENT_CCY2
+      - QRF_FLOAT_RATE_IDX2
+      - QRF_INIT_FIX_RATE2
+      - QRF_FLOAT_RATE_IDX1
+      - QRF_INIT_FIX_RATE1
+      - QRF_EXPIRY_DATE
+      - QRF_EXCH_RT_BASIS_CCY_2
+      - QRF_EXCH_RT_BASIS_CCY_1
+      - QRF_EXCH_RT
+      - QRF_EXHAUSTION_POINT
+      - QRF_ATTACHMENT_POINT
+      - QRF_INDEX_FACTOR
+      - QRF_OPT_STYLE
+      - QRF_OPT_TYPE
+      - QRF_SETTLEMENT_CCY1
+      - QRF_SETTLEMENT_TYPE
+      - QRF_STRIKE_PRICE
+      - QRF_UNITS_TYPE_QTY1
+      - QRF_PRICE_PX_VAL1
+      - QRF_CLRNG_VENUE_ID
+      - QRF_CLRNG_VENUE_ID_TYPE
+      - QRF_MESSAGE_ID
+      - QRF_MAT_UNDRL_DATE
+      - QRF_CLRNG_DTTIME
+      - QRF_CLRNG_STATUS
+      - QRF_MASTER_AGREE_VERSION
+      - QRF_MASTER_AGREE_TYPE
+      - QRF_ORIG_EXEC_DATE
+      - QRF_NOTIONAL_CCY2
+      - QRF_NOTIONAL_CCY1
+      - QRF_NOTIONAL_AMT2
+      - QRF_NOTIONAL_AMT1
+      - QRF_EXECUTION_VENUE_ID
+      - QRF_EXECUTION_VENUE_ID_TYPE
+      - QRF_UTI_ID_PFX
+      - QRF_UTI_ID
+      - QRF_TRD_PTY_TRDNUM1
+      - QRF_TRD_PTY_1_CLRNG_BRK_ID
+      - QRF_TRD_PTY_1_CLR_BRK_ID_TYPE
+      - QRF_TRD_PTY_BKR_ID1
+      - QRF_TRD_PTY_BKR_ID_TYPE1
+      - QRF_TRD_PTY_EXEC_AGNT_ID2
+      - QRF_TRD_PTY_EXEC_AGNT_ID_TYPE2
+      - QRF_TRD_PTY_EXEC_AGNT_ID1
+      - QRF_TRD_PTY_EXEC_AGNT_ID_TYPE1
+      - QRF_PRODUCT_ID
+      - QRF_TRD_PTY_REPOTING_DEST2
+      - QRF_TRD_PTY_REPOTING_DEST1
+      - QRF_TRD_PTY_ID_2
+      - QRF_TRD_PTY_ID_TYPE_2
+      - QRF_TRD_PTY_ID_1
+      - QRF_TRD_PTY_ID_TYPE_1
+      - QRF_PRIMARY_ASSET_CLASS
+      - QRF_SUBMIT_FOR_PTY
+      - QRF_SUBMIT_PTY_ID
+      - QRF_SUBMIT_PTY_ID_TYPE
+      - QRF_MESSAGE_TYPE
+      - QRF_VERSION
+      - QRF_ACTION
+      - CTL_EXTRACT_DATE
+      - CTL_SITE_NAME
+      - CTL_SYSTEM_NAME
+      - CTL_DIVISION_NAME
+      - NEXTVAL                             (from QRF_SID   aliased as QRF_SID)
+
+------------------------------------------------------------------------------
+ 2. FIELD-BY-FIELD MAPPINGS  (SOURCE  -->  DESTINATION)
+------------------------------------------------------------------------------
+
+  >>> DESTINATION LINK / STAGE : Ln_SDH
+      SOURCE                                         -->   DESTINATION
+      ---------------------------------------------        ----------------------------------------
+      Ln_StgData.QRF_LATE_EXEC_DATE                  -->   Ln_SDH.LATEST_EXEC_DATETIME   (line 58)
+      Ln_StgData.QRF_BUYER_ID                        -->   Ln_SDH.BUYER_IDENTIFIER  [string[max=50]]   (line 59)
+      Ln_StgData.QRF_SELLER_ID                       -->   Ln_SDH.SELLER_IDENTIFIER  [string[max=50]]   (line 60)
+      Ln_StgData.QRF_UNDRL_ASSET_ID_TYPE             -->   Ln_SDH.UNDERLYING_ASSET_ID_TYPE   (line 61)
+      Ln_StgData.QRF_UNDRL_ASSET_ID                  -->   Ln_SDH.UNDERLYING_ASSET_ID   (line 62)
+
+  >>> DESTINATION LINK / STAGE : Ln_To_FMODS
+      SOURCE                                         -->   DESTINATION
+      ---------------------------------------------        ----------------------------------------
+      Ln_Input.QRD_TRADE_PARTY_ID2                   -->   Ln_To_FMODS.QRD_CPTY_SRC_NAME   (line 73)
+      Ln_Input.QRD_TRADE_PARTY_ID_TYPE2              -->   Ln_To_FMODS.QRD_CPTY_SRC_TYPE   (line 74)
+      Ln_Input.QRD_TRD_PARTY_CFTC_FIN_ENT_ST1        -->   Ln_To_FMODS.QRD_CFTC_FIN_STATUS_PARTY1   (line 75)
+      Ln_Input.QRD_TRD_PARTY_CFTC_FIN_ENT_ST2        -->   Ln_To_FMODS.QRD_CFTC_FIN_STATUS_PARTY2   (line 76)
+      Ln_Input.QRD_BUYER_ID                          -->   Ln_To_FMODS.QRD_BUYER_PAYER_ID1   (line 77)
+      Ln_Input.QRD_SELLER_ID                         -->   Ln_To_FMODS.QRD_SELLER_PAYER_ID2   (line 78)
+      Ln_Input.QRD_PAYER_ID1                         -->   Ln_To_FMODS.QRD_PAYMT_PAYER_ID1   (line 79)
+      Ln_Input.QRD_PAYER_ID2                         -->   Ln_To_FMODS.QRD_PAYMET_PAYER_ID2   (line 80)
+      Ln_Input.QRD_SUBMIT_PARTY_ID                   -->   Ln_To_FMODS.QRD_SUBMITTING_PARTY_ID   (line 81)
+      Ln_Input.QRD_SUBMIT_PARTY_ID_TYPE              -->   Ln_To_FMODS.QRD_SUBMITTING_PARTY_TYPE   (line 82)
+      Ln_Input.QRD_LATE_EXEC_DATE                    -->   Ln_To_FMODS.QRD_LATE_EXEC_DATE   (line 83)
+
+  >>> DESTINATION LINK / STAGE : Ln_To_SDH1
+      SOURCE                                         -->   DESTINATION
+      ---------------------------------------------        ----------------------------------------
+      Ln_Input.QRD_TRD_PARTY_CFTC_FIN_ENT_ST2        -->   Ln_To_SDH1.TRD_PARTY_2_CFTC_FIN_ENTY_STAT  [string[max=50]]   (line 65)
+      Ln_Input.QRD_BUYER_ID                          -->   Ln_To_SDH1.BUYER_IDENTIFIER  [string[max=50]]   (line 66)
+      Ln_Input.QRD_SELLER_ID                         -->   Ln_To_SDH1.SELLER_IDENTIFIER  [string[max=50]]   (line 67)
+      Ln_Input.QRD_PAYER_ID1                         -->   Ln_To_SDH1.PAYER_IDENTIFIER_1  [string[max=50]]   (line 68)
+      Ln_Input.QRD_PAYER_ID2                         -->   Ln_To_SDH1.PAYER_IDENTIFIER_2  [string[max=50]]   (line 69)
+      Ln_Input.QRD_TRADE_PARTY_ID2                   -->   Ln_To_SDH1.TRADE_PARTY_2_ID  [string[max=50]]   (line 84)
+      Ln_Input.QRD_TRADE_PARTY_ID_TYPE2              -->   Ln_To_SDH1.TRADE_PARTY_2_ID_TYPE  [string[max=50]]   (line 85)
+      Ln_Input.QRD_TRD_PARTY_CFTC_FIN_ENT_ST1        -->   Ln_To_SDH1.TRD_PARTY_1_CFTC_FIN_ENTY_STAT  [string[max=50]]   (line 86)
+      Ln_Input.QRD_TRD_PARTY_CFTC_FIN_ENT_ST2        -->   Ln_To_SDH1.TRD_PARTY_2_CFTC_FIN_ENTY_STAT  [string[max=50]]   (line 87)
+      Ln_Input.QRD_BUYER_ID                          -->   Ln_To_SDH1.BUYER_IDENTIFIER  [string[max=50]]   (line 88)
+      Ln_Input.QRD_SELLER_ID                         -->   Ln_To_SDH1.SELLER_IDENTIFIER  [string[max=50]]   (line 89)
+      Ln_Input.QRD_PAYER_ID1                         -->   Ln_To_SDH1.PAYER_IDENTIFIER_1  [string[max=50]]   (line 90)
+      Ln_Input.QRD_PAYER_ID2                         -->   Ln_To_SDH1.PAYER_IDENTIFIER_2  [string[max=50]]   (line 91)
+      Ln_Input.QRD_SUBMIT_PARTY_ID                   -->   Ln_To_SDH1.SUBMITTING_PARTY_ID   (line 92)
+      Ln_Input.QRD_SUBMIT_PARTY_ID_TYPE              -->   Ln_To_SDH1.SUBMITTING_PARTY_ID_TYPE   (line 93)
+      Ln_Input.QRD_LATE_EXEC_DATE                    -->   Ln_To_SDH1.LATEST_EXEC_DATETIME   (line 94)
+
+------------------------------------------------------------------------------
+ 3. COLUMN DEFINITIONS WITH DERIVATIONS
+------------------------------------------------------------------------------
+   (none found)
+
+------------------------------------------------------------------------------
+ 3b. GENERATED TRANSFORM OPERATORS  (custom stage code)
+------------------------------------------------------------------------------
+   (none found)
+
+------------------------------------------------------------------------------
+ 4. END-TO-END LINEAGE CHAINS
+    (Read left-to-right: PHYSICAL SOURCE --> staging link --> target link)
+------------------------------------------------------------------------------
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRFSTG_QRD_TRADE_FULL.QRF_LATE_EXEC_DATE  -->  Ln_StgData.QRF_LATE_EXEC_DATE  -->  Ln_SDH.LATEST_EXEC_DATETIME
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRFSTG_QRD_TRADE_FULL.QRF_BUYER_ID  -->  Ln_StgData.QRF_BUYER_ID  -->  Ln_SDH.BUYER_IDENTIFIER
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRFSTG_QRD_TRADE_FULL.QRF_SELLER_ID  -->  Ln_StgData.QRF_SELLER_ID  -->  Ln_SDH.SELLER_IDENTIFIER
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRFSTG_QRD_TRADE_FULL.QRF_UNDRL_ASSET_ID_TYPE  -->  Ln_StgData.QRF_UNDRL_ASSET_ID_TYPE  -->  Ln_SDH.UNDERLYING_ASSET_ID_TYPE
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRFSTG_QRD_TRADE_FULL.QRF_UNDRL_ASSET_ID  -->  Ln_StgData.QRF_UNDRL_ASSET_ID  -->  Ln_SDH.UNDERLYING_ASSET_ID
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_TRD_PARTY_CFTC_FIN_ENT_ST2  -->  Ln_Input.QRD_TRD_PARTY_CFTC_FIN_ENT_ST2  -->  Ln_To_SDH1.TRD_PARTY_2_CFTC_FIN_ENTY_STAT
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_BUYER_ID  -->  Ln_Input.QRD_BUYER_ID  -->  Ln_To_SDH1.BUYER_IDENTIFIER
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_SELLER_ID  -->  Ln_Input.QRD_SELLER_ID  -->  Ln_To_SDH1.SELLER_IDENTIFIER
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_PAYER_ID1  -->  Ln_Input.QRD_PAYER_ID1  -->  Ln_To_SDH1.PAYER_IDENTIFIER_1
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_PAYER_ID2  -->  Ln_Input.QRD_PAYER_ID2  -->  Ln_To_SDH1.PAYER_IDENTIFIER_2
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_TRADE_PARTY_ID2  -->  Ln_Input.QRD_TRADE_PARTY_ID2  -->  Ln_To_FMODS.QRD_CPTY_SRC_NAME
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_TRADE_PARTY_ID_TYPE2  -->  Ln_Input.QRD_TRADE_PARTY_ID_TYPE2  -->  Ln_To_FMODS.QRD_CPTY_SRC_TYPE
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_TRD_PARTY_CFTC_FIN_ENT_ST1  -->  Ln_Input.QRD_TRD_PARTY_CFTC_FIN_ENT_ST1  -->  Ln_To_FMODS.QRD_CFTC_FIN_STATUS_PARTY1
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_TRD_PARTY_CFTC_FIN_ENT_ST2  -->  Ln_Input.QRD_TRD_PARTY_CFTC_FIN_ENT_ST2  -->  Ln_To_FMODS.QRD_CFTC_FIN_STATUS_PARTY2
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_BUYER_ID  -->  Ln_Input.QRD_BUYER_ID  -->  Ln_To_FMODS.QRD_BUYER_PAYER_ID1
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_SELLER_ID  -->  Ln_Input.QRD_SELLER_ID  -->  Ln_To_FMODS.QRD_SELLER_PAYER_ID2
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_PAYER_ID1  -->  Ln_Input.QRD_PAYER_ID1  -->  Ln_To_FMODS.QRD_PAYMT_PAYER_ID1
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_PAYER_ID2  -->  Ln_Input.QRD_PAYER_ID2  -->  Ln_To_FMODS.QRD_PAYMET_PAYER_ID2
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_SUBMIT_PARTY_ID  -->  Ln_Input.QRD_SUBMIT_PARTY_ID  -->  Ln_To_FMODS.QRD_SUBMITTING_PARTY_ID
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_SUBMIT_PARTY_ID_TYPE  -->  Ln_Input.QRD_SUBMIT_PARTY_ID_TYPE  -->  Ln_To_FMODS.QRD_SUBMITTING_PARTY_TYPE
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_LATE_EXEC_DATE  -->  Ln_Input.QRD_LATE_EXEC_DATE  -->  Ln_To_FMODS.QRD_LATE_EXEC_DATE
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_TRADE_PARTY_ID2  -->  Ln_Input.QRD_TRADE_PARTY_ID2  -->  Ln_To_SDH1.TRADE_PARTY_2_ID
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_TRADE_PARTY_ID_TYPE2  -->  Ln_Input.QRD_TRADE_PARTY_ID_TYPE2  -->  Ln_To_SDH1.TRADE_PARTY_2_ID_TYPE
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_TRD_PARTY_CFTC_FIN_ENT_ST1  -->  Ln_Input.QRD_TRD_PARTY_CFTC_FIN_ENT_ST1  -->  Ln_To_SDH1.TRD_PARTY_1_CFTC_FIN_ENTY_STAT
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_SUBMIT_PARTY_ID  -->  Ln_Input.QRD_SUBMIT_PARTY_ID  -->  Ln_To_SDH1.SUBMITTING_PARTY_ID
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_SUBMIT_PARTY_ID_TYPE  -->  Ln_Input.QRD_SUBMIT_PARTY_ID_TYPE  -->  Ln_To_SDH1.SUBMITTING_PARTY_ID_TYPE
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_LATE_EXEC_DATE  -->  Ln_Input.QRD_LATE_EXEC_DATE  -->  Ln_To_SDH1.LATEST_EXEC_DATETIME
+
+------------------------------------------------------------------------------
+ 5. ITEMS MENTIONING "SELLER"
+------------------------------------------------------------------------------
+
+   Field-level chains:
+      [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRFSTG_QRD_TRADE_FULL.QRF_SELLER_ID  -->  Ln_StgData.QRF_SELLER_ID  -->  Ln_SDH.SELLER_IDENTIFIER
+      [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_SELLER_ID  -->  Ln_Input.QRD_SELLER_ID  -->  Ln_To_SDH1.SELLER_IDENTIFIER
+      [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_SELLER_ID  -->  Ln_Input.QRD_SELLER_ID  -->  Ln_To_FMODS.QRD_SELLER_PAYER_ID2
+
+==============================================================================
+ END OF REPORT
+==============================================================================

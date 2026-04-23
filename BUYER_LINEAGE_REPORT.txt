@@ -1,0 +1,164 @@
+==============================================================================
+ DATA LINEAGE REPORT
+ Field of interest          : BUYER
+ Input  file                : C:\NBC\GTR\GTR_LINEAGE_TRACE\BUYER_LINEAGE_TRACE.txt
+ Output file                : C:\NBC\GTR\GTR_LINEAGE_REPORTS\BUYER_LINEAGE_REPORT.txt
+ Filter unused source cols  : True
+==============================================================================
+
+------------------------------------------------------------------------------
+ 1. PHYSICAL SOURCE TABLES (from embedded SQL / XML)
+    (showing only columns that are referenced downstream)
+------------------------------------------------------------------------------
+
+  SCHEMA : #DwhTresDbStaging.DbSchema#
+  TABLE  : TB_QRDSTG_QRD_TRADE
+  COLUMNS PROJECTED (172 total, 11 used, 161 hidden):
+      - QRD_SUBMIT_PARTY_ID_TYPE
+      - QRD_SUBMIT_PARTY_ID
+      - QRD_PAYER_ID2
+      - QRD_PAYER_ID1
+      - QRD_SELLER_ID
+      - QRD_BUYER_ID
+      - QRD_TRD_PARTY_CFTC_FIN_ENT_ST2
+      - QRD_TRD_PARTY_CFTC_FIN_ENT_ST1
+      - QRD_TRADE_PARTY_ID_TYPE2
+      - QRD_TRADE_PARTY_ID2
+      - QRD_TRADE_PARTY_ID_TYPE_1
+      ... (161 more columns hidden — not referenced downstream)
+
+  SCHEMA : #DwhTresDbStaging.DbSchema#
+  TABLE  : TB_QRFSTG_QRD_TRADE_FULL
+  COLUMNS PROJECTED (256 total, 5 used, 251 hidden):
+      - QRF_UNDRL_ASSET_ID_TYPE
+      - QRF_SELLER_ID
+      - QRF_BUYER_ID
+      - QRF_LATE_EXEC_DATE
+      - QRF_PRIOR_UTI_ID
+      ... (251 more columns hidden — not referenced downstream)
+
+------------------------------------------------------------------------------
+ 2. FIELD-BY-FIELD MAPPINGS  (SOURCE  -->  DESTINATION)
+------------------------------------------------------------------------------
+
+  >>> DESTINATION LINK / STAGE : Ln_SDH
+      SOURCE                                         -->   DESTINATION
+      ---------------------------------------------        ----------------------------------------
+      Ln_StgData.QRF_PRIOR_UTI_ID                    -->   Ln_SDH.PRIOR_UTI_ID   (line 58)
+      Ln_StgData.QRF_LATE_EXEC_DATE                  -->   Ln_SDH.LATEST_EXEC_DATETIME   (line 59)
+      Ln_StgData.QRF_BUYER_ID                        -->   Ln_SDH.BUYER_IDENTIFIER  [string[max=50]]   (line 60)
+      Ln_StgData.QRF_SELLER_ID                       -->   Ln_SDH.SELLER_IDENTIFIER  [string[max=50]]   (line 61)
+      Ln_StgData.QRF_UNDRL_ASSET_ID_TYPE             -->   Ln_SDH.UNDERLYING_ASSET_ID_TYPE   (line 62)
+
+  >>> DESTINATION LINK / STAGE : Ln_To_FMODS
+      SOURCE                                         -->   DESTINATION
+      ---------------------------------------------        ----------------------------------------
+      Ln_Input.QRD_TRADE_PARTY_ID_TYPE_1             -->   Ln_To_FMODS.QRD_LEGL_ENTITY_TYPE   (line 73)
+      Ln_Input.QRD_TRADE_PARTY_ID2                   -->   Ln_To_FMODS.QRD_CPTY_SRC_NAME   (line 74)
+      Ln_Input.QRD_TRADE_PARTY_ID_TYPE2              -->   Ln_To_FMODS.QRD_CPTY_SRC_TYPE   (line 75)
+      Ln_Input.QRD_TRD_PARTY_CFTC_FIN_ENT_ST1        -->   Ln_To_FMODS.QRD_CFTC_FIN_STATUS_PARTY1   (line 76)
+      Ln_Input.QRD_TRD_PARTY_CFTC_FIN_ENT_ST2        -->   Ln_To_FMODS.QRD_CFTC_FIN_STATUS_PARTY2   (line 77)
+      Ln_Input.QRD_BUYER_ID                          -->   Ln_To_FMODS.QRD_BUYER_PAYER_ID1   (line 78)
+      Ln_Input.QRD_SELLER_ID                         -->   Ln_To_FMODS.QRD_SELLER_PAYER_ID2   (line 79)
+      Ln_Input.QRD_PAYER_ID1                         -->   Ln_To_FMODS.QRD_PAYMT_PAYER_ID1   (line 80)
+      Ln_Input.QRD_PAYER_ID2                         -->   Ln_To_FMODS.QRD_PAYMET_PAYER_ID2   (line 81)
+      Ln_Input.QRD_SUBMIT_PARTY_ID                   -->   Ln_To_FMODS.QRD_SUBMITTING_PARTY_ID   (line 82)
+      Ln_Input.QRD_SUBMIT_PARTY_ID_TYPE              -->   Ln_To_FMODS.QRD_SUBMITTING_PARTY_TYPE   (line 83)
+
+  >>> DESTINATION LINK / STAGE : Ln_To_SDH1
+      SOURCE                                         -->   DESTINATION
+      ---------------------------------------------        ----------------------------------------
+      Ln_Input.QRD_TRD_PARTY_CFTC_FIN_ENT_ST1        -->   Ln_To_SDH1.TRD_PARTY_1_CFTC_FIN_ENTY_STAT  [string[max=50]]   (line 65)
+      Ln_Input.QRD_TRD_PARTY_CFTC_FIN_ENT_ST2        -->   Ln_To_SDH1.TRD_PARTY_2_CFTC_FIN_ENTY_STAT  [string[max=50]]   (line 66)
+      Ln_Input.QRD_BUYER_ID                          -->   Ln_To_SDH1.BUYER_IDENTIFIER  [string[max=50]]   (line 67)
+      Ln_Input.QRD_SELLER_ID                         -->   Ln_To_SDH1.SELLER_IDENTIFIER  [string[max=50]]   (line 68)
+      Ln_Input.QRD_PAYER_ID1                         -->   Ln_To_SDH1.PAYER_IDENTIFIER_1  [string[max=50]]   (line 69)
+      Ln_Input.QRD_TRADE_PARTY_ID_TYPE_1             -->   Ln_To_SDH1.TRADE_PARTY_1_ID_TYPE  [string[max=50]]   (line 84)
+      Ln_Input.QRD_TRADE_PARTY_ID2                   -->   Ln_To_SDH1.TRADE_PARTY_2_ID  [string[max=50]]   (line 85)
+      Ln_Input.QRD_TRADE_PARTY_ID_TYPE2              -->   Ln_To_SDH1.TRADE_PARTY_2_ID_TYPE  [string[max=50]]   (line 86)
+      Ln_Input.QRD_TRD_PARTY_CFTC_FIN_ENT_ST1        -->   Ln_To_SDH1.TRD_PARTY_1_CFTC_FIN_ENTY_STAT  [string[max=50]]   (line 87)
+      Ln_Input.QRD_TRD_PARTY_CFTC_FIN_ENT_ST2        -->   Ln_To_SDH1.TRD_PARTY_2_CFTC_FIN_ENTY_STAT  [string[max=50]]   (line 88)
+      Ln_Input.QRD_BUYER_ID                          -->   Ln_To_SDH1.BUYER_IDENTIFIER  [string[max=50]]   (line 89)
+      Ln_Input.QRD_SELLER_ID                         -->   Ln_To_SDH1.SELLER_IDENTIFIER  [string[max=50]]   (line 90)
+      Ln_Input.QRD_PAYER_ID1                         -->   Ln_To_SDH1.PAYER_IDENTIFIER_1  [string[max=50]]   (line 91)
+      Ln_Input.QRD_PAYER_ID2                         -->   Ln_To_SDH1.PAYER_IDENTIFIER_2   (line 92)
+      Ln_Input.QRD_SUBMIT_PARTY_ID                   -->   Ln_To_SDH1.SUBMITTING_PARTY_ID   (line 93)
+      Ln_Input.QRD_SUBMIT_PARTY_ID_TYPE              -->   Ln_To_SDH1.SUBMITTING_PARTY_ID_TYPE   (line 94)
+
+------------------------------------------------------------------------------
+ 3. COLUMN DEFINITIONS WITH DERIVATIONS
+------------------------------------------------------------------------------
+   (none found)
+
+------------------------------------------------------------------------------
+ 4. END-TO-END LINEAGE CHAINS
+    (Read left-to-right: PHYSICAL SOURCE --> staging link --> target link)
+------------------------------------------------------------------------------
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRFSTG_QRD_TRADE_FULL.QRF_PRIOR_UTI_ID  -->  Ln_StgData.QRF_PRIOR_UTI_ID  -->  Ln_SDH.PRIOR_UTI_ID
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRFSTG_QRD_TRADE_FULL.QRF_LATE_EXEC_DATE  -->  Ln_StgData.QRF_LATE_EXEC_DATE  -->  Ln_SDH.LATEST_EXEC_DATETIME
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRFSTG_QRD_TRADE_FULL.QRF_BUYER_ID  -->  Ln_StgData.QRF_BUYER_ID  -->  Ln_SDH.BUYER_IDENTIFIER
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRFSTG_QRD_TRADE_FULL.QRF_SELLER_ID  -->  Ln_StgData.QRF_SELLER_ID  -->  Ln_SDH.SELLER_IDENTIFIER
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRFSTG_QRD_TRADE_FULL.QRF_UNDRL_ASSET_ID_TYPE  -->  Ln_StgData.QRF_UNDRL_ASSET_ID_TYPE  -->  Ln_SDH.UNDERLYING_ASSET_ID_TYPE
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_TRD_PARTY_CFTC_FIN_ENT_ST1  -->  Ln_Input.QRD_TRD_PARTY_CFTC_FIN_ENT_ST1  -->  Ln_To_SDH1.TRD_PARTY_1_CFTC_FIN_ENTY_STAT
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_TRD_PARTY_CFTC_FIN_ENT_ST2  -->  Ln_Input.QRD_TRD_PARTY_CFTC_FIN_ENT_ST2  -->  Ln_To_SDH1.TRD_PARTY_2_CFTC_FIN_ENTY_STAT
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_BUYER_ID  -->  Ln_Input.QRD_BUYER_ID  -->  Ln_To_SDH1.BUYER_IDENTIFIER
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_SELLER_ID  -->  Ln_Input.QRD_SELLER_ID  -->  Ln_To_SDH1.SELLER_IDENTIFIER
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_PAYER_ID1  -->  Ln_Input.QRD_PAYER_ID1  -->  Ln_To_SDH1.PAYER_IDENTIFIER_1
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_TRADE_PARTY_ID_TYPE_1  -->  Ln_Input.QRD_TRADE_PARTY_ID_TYPE_1  -->  Ln_To_FMODS.QRD_LEGL_ENTITY_TYPE
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_TRADE_PARTY_ID2  -->  Ln_Input.QRD_TRADE_PARTY_ID2  -->  Ln_To_FMODS.QRD_CPTY_SRC_NAME
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_TRADE_PARTY_ID_TYPE2  -->  Ln_Input.QRD_TRADE_PARTY_ID_TYPE2  -->  Ln_To_FMODS.QRD_CPTY_SRC_TYPE
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_TRD_PARTY_CFTC_FIN_ENT_ST1  -->  Ln_Input.QRD_TRD_PARTY_CFTC_FIN_ENT_ST1  -->  Ln_To_FMODS.QRD_CFTC_FIN_STATUS_PARTY1
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_TRD_PARTY_CFTC_FIN_ENT_ST2  -->  Ln_Input.QRD_TRD_PARTY_CFTC_FIN_ENT_ST2  -->  Ln_To_FMODS.QRD_CFTC_FIN_STATUS_PARTY2
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_BUYER_ID  -->  Ln_Input.QRD_BUYER_ID  -->  Ln_To_FMODS.QRD_BUYER_PAYER_ID1
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_SELLER_ID  -->  Ln_Input.QRD_SELLER_ID  -->  Ln_To_FMODS.QRD_SELLER_PAYER_ID2
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_PAYER_ID1  -->  Ln_Input.QRD_PAYER_ID1  -->  Ln_To_FMODS.QRD_PAYMT_PAYER_ID1
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_PAYER_ID2  -->  Ln_Input.QRD_PAYER_ID2  -->  Ln_To_FMODS.QRD_PAYMET_PAYER_ID2
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_SUBMIT_PARTY_ID  -->  Ln_Input.QRD_SUBMIT_PARTY_ID  -->  Ln_To_FMODS.QRD_SUBMITTING_PARTY_ID
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_SUBMIT_PARTY_ID_TYPE  -->  Ln_Input.QRD_SUBMIT_PARTY_ID_TYPE  -->  Ln_To_FMODS.QRD_SUBMITTING_PARTY_TYPE
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_TRADE_PARTY_ID_TYPE_1  -->  Ln_Input.QRD_TRADE_PARTY_ID_TYPE_1  -->  Ln_To_SDH1.TRADE_PARTY_1_ID_TYPE
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_TRADE_PARTY_ID2  -->  Ln_Input.QRD_TRADE_PARTY_ID2  -->  Ln_To_SDH1.TRADE_PARTY_2_ID
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_TRADE_PARTY_ID_TYPE2  -->  Ln_Input.QRD_TRADE_PARTY_ID_TYPE2  -->  Ln_To_SDH1.TRADE_PARTY_2_ID_TYPE
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_PAYER_ID2  -->  Ln_Input.QRD_PAYER_ID2  -->  Ln_To_SDH1.PAYER_IDENTIFIER_2
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_SUBMIT_PARTY_ID  -->  Ln_Input.QRD_SUBMIT_PARTY_ID  -->  Ln_To_SDH1.SUBMITTING_PARTY_ID
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_SUBMIT_PARTY_ID_TYPE  -->  Ln_Input.QRD_SUBMIT_PARTY_ID_TYPE  -->  Ln_To_SDH1.SUBMITTING_PARTY_ID_TYPE
+
+------------------------------------------------------------------------------
+ 5. CHAINS MENTIONING "BUYER"
+------------------------------------------------------------------------------
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRFSTG_QRD_TRADE_FULL.QRF_BUYER_ID  -->  Ln_StgData.QRF_BUYER_ID  -->  Ln_SDH.BUYER_IDENTIFIER
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_BUYER_ID  -->  Ln_Input.QRD_BUYER_ID  -->  Ln_To_SDH1.BUYER_IDENTIFIER
+
+   [PHYSICAL] #DwhTresDbStaging.DbSchema#.TB_QRDSTG_QRD_TRADE.QRD_BUYER_ID  -->  Ln_Input.QRD_BUYER_ID  -->  Ln_To_FMODS.QRD_BUYER_PAYER_ID1
+
+==============================================================================
+ END OF REPORT
+==============================================================================
